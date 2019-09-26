@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.09 (64 bit)
-MySQL - 5.5.56-log : Database - vivo
+MySQL - 5.5.56-log : Database - b_c1egdchcwrsjob
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.5.56-log : Database - vivo
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`vivo` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`b_c1egdchcwrsjob` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `vivo`;
+USE `b_c1egdchcwrsjob`;
 
 /*Table structure for table `shop` */
 
@@ -77,17 +77,19 @@ CREATE TABLE `shop` (
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `tel` int(11) DEFAULT NULL,
+  `tel` varchar(11) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`username`),
   KEY `id` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
+
+insert  into `user`(`id`,`username`,`password`,`email`,`tel`,`icon`) values (0,'liuyang','123','984584014@qq.com','18284335838','http://127.0.0.1/images/icon/liuyang.jpg');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
