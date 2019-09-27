@@ -10,7 +10,7 @@ const defaultOptions = {
     // 数据库密码
     password: 'root',
     // 数据库名称
-    database: 'b_clegdchcwrsjob'
+    database: 'b_c1egdchcwrsjob'
 }
 
 function getConnection(options = defaultOptions) {

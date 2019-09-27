@@ -18,7 +18,7 @@ module.exports ={
     output:{
         path:path.resolve(__dirname,"../dist/"),
         filename:"static/js/[name]-[hash:5].js",
-        publicPath:"10.2.2.155:8090/"
+        publicPath:"127.0.0.1:8090/"
     },
     // 配置模块
     module:{rules},
@@ -26,7 +26,7 @@ module.exports ={
     plugins,
     devServer: {
         contentBase: path.resolve(__dirname,"../dist/"),
-        host:"10.2.2.155",
+        host:"127.0.0.1",
         open: true,
         hot: true,
         port: 8090,
