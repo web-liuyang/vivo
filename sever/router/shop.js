@@ -3,10 +3,10 @@ const router = express.Router();
 
 // 连接数据库
 const getMysql = require("../mysql")
-
+// home商品
 router.get("/shop", (req, res) => {
     // 参数结构
-    let {classify} = req.query;
+    let {classname} = req.query;
     // 获取数据库
     const db = getMysql();
     // 连接数据库
@@ -18,6 +18,5 @@ router.get("/shop", (req, res) => {
     })
     // 断开数据库连接
     db.end();
-
 })
 module.exports = router;

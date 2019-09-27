@@ -25,8 +25,6 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 // 6.处理路由
-
-
 const shopRouter = require('./router/shop');
 app.use("/",shopRouter);
 
