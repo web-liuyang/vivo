@@ -10,7 +10,7 @@ const defaultOptions = {
     // 数据库密码
     password: 'root',
     // 数据库名称
-    database: 'vivo'
+    database: 'b_clegdchcwrsjob'
 }
 
 function getConnection(options = defaultOptions) {
