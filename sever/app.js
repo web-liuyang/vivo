@@ -16,7 +16,7 @@ app.all("*", (req, res, next) => {
         next();
 });
 // 4. 监听 http://127.0.0.1:8081"
-app.listen(8081, "127.0.0.1");
+app.listen(8081, "0.0.0.0");
 
 // 5. 中间件
 const bodyParser = require("body-parser");

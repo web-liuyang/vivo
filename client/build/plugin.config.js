@@ -10,8 +10,6 @@ const webpack = require("webpack");
 // const ExtractTextPlugin = require("extract-text-webpack-plugin")
 //压缩css
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-//JQuery
-const $ = require("jquery")
 // 插件
 module.exports = [
     //因为是数组所以要序列话，否则就成为二维数组
@@ -39,12 +37,13 @@ module.exports = [
         },
         canPrint: true
     }),
-    
+
     new webpack.ProvidePlugin({
-        $:"jquery",
+        $: "jquery",
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
-        Popper:['popper.js', 'default']
-    })
+        Popper: ['popper.js', 'default']
+    }),
+
 
 ]

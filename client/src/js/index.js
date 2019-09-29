@@ -1,3 +1,4 @@
+console.log("首页")
 //引用css
 import "../sass/public.scss";
 import "../sass/index.scss";
