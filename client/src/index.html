@@ -10,15 +10,238 @@
 </head>
 
 <body>
-    <a href="./static/pages/shoppingmall.html">跳转  </a>
-    <script>
-        fetch('http://127.0.0.1:8081/', {
-                method: "GET"
-            }).then(request => request.json())
-            .then(data => {
-                console.log(data)
-            })
-    </script>
-</body>
+    <!-- header头部 -->
+    <header>
+        <div class="container-fuild d-none d-md-block">
+            <!-- 导航栏 -->
+            <nav class="padding-none navbar navbar-expand-md ">
+                <ul class="navbar-nav top-list">
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">品牌</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">funtouch OS</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">体验店</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">政企服务</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">社区</a>
+                    </li>
+                </ul>
+                <!-- 登录注册 -->
+                <ul class="navbar-nav ml-auto personal">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">登录</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">注册</a>
+                    </li>
+                </ul>
+                <div class="dropdown show personal-list">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     个人中心
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">商城</a>
+                        <a class="dropdown-item" href="#">购物车</a>
+                        <a class="dropdown-item" href="#">账号中心</a>
+                        <a class="dropdown-item" href="#">注销</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
-</html>
+
+
+        <div class="top-nav">
+            <div class="img-bg">
+                <img class="img d-none d-md-block" src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190927/db148dbdea4528117b64777ea6509b5f.jpg_w2560-h680.jpg" alt="">
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide d-md-none" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+
+                            <img class="d-block w-100" src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190927/be166dccd10d3af407da15ed4aa0e4ba.jpg_w1080-h1655.jpg" alt="First slide">
+                            <div class="carousel-caption">
+                                <p>
+                                    <h1>领券购机省200</h1>
+
+                                    <p>
+                                        <h4>新品机型分期免息</h4>
+                                    </p>
+                                    <p>
+                                        <h5><a href="">>立即购买</a></h5>
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190902/c073236199bf5e68cd2f68723c576b4f.jpg_w1080-h1655.jpg" alt="Second slide">
+                            <div class="carousel-caption">
+                                <p>
+                                    <h1>IQOO pro 全速进化</h1>
+
+                                    <p>
+                                        <h4>首发新品开售</h4>
+                                    </p>
+                                    <p>
+                                        <h5><a href="">>查看详情</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">>立即购买</a></h5>
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190805/240e5f7bc6d1b6fba37711dc058e5635.jpg_w1080-h1655.jpg" alt="Third slide">
+                            <div class="carousel-caption">
+                                <p>
+                                    <h1>Z5全面实力派</h1>
+
+                                    <p>
+                                        <h4>4800万超广角三摄</h4>
+                                    </p>
+                                    <p>
+                                        <h5><a href="">>查看详情</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">>立即购买</a></h5>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <nav class="navbar navbar-expand-md  navbar-dark app-bar">
+                <div class="container">
+                    <button class="navbar-toggler unfold-btn" data-toggle="collapse" data-target="#res-nav">
+                            <span class="navbar-toggler-icon"></span>
+                       </button>
+                    <input class="search-bar" type="text" placeholder="NEX旗舰版">
+                    <a href="javascript:;" class="nav-link navbar-brand logobar">VIVO</a>
+                    <a href="javascript:;" class="nav-link navbar-brand shop-pack d-md-none"><span class="iconfont">&#xe792;</span></a>
+                    <div class="collapse navbar-collapse" id="res-nav">
+                        <!-- 折叠导航内容 -->
+                        <ul class="navbar-nav nav-left d-md-none">
+                            <li class="nav-item">
+                                <span> <a href="javascript:;" class="nav-link">IQOO专区</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">NEX系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">X系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">S系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">Z系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">Y系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item ">
+                                <span> <a href="javascript:;" class="nav-link">U系列</a></span>
+                                <span class="symbol">+</span>
+                            </li>
+                            <li class="nav-item">
+                                <span> <a href="javascript:;" class="nav-link">真无线耳机</a></span>
+                                <span class="symbol">></span>
+                            </li>
+                            <li class="nav-item">
+                                <span> <a href="javascript:;" class="nav-link">商城</a></span>
+                                <span class="symbol">></span>
+                            </li>
+                            <li class="nav-item">
+                                <span> <a href="javascript:;" class="nav-link">服务</a></span>
+                                <span class="symbol">></span>
+                            </li>
+                            <li class="nav-item">
+                                <span> <a href="javascript:;" class="nav-link">注册</a><a href="javascript:;" class="nav-link">登录</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ul class="navbar-nav nav-flex">
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">IQOO专区</span>
+                                <span class="change-name d-lg-none">IQOO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">NEX专区</span>
+                                <span class="change-name  d-lg-none">NEX</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">X系列</span>
+                                <span class="change-name  d-lg-none">X</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">S系列</span>
+                                <span class="change-name  d-lg-none">S</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">Z系列</span>
+                                <span class="change-name  d-lg-none">Z</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">Y系列</span>
+                                <span class="change-name  d-lg-none">Y</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">U系列</span>
+                                <span class="change-name  d-lg-none ">U</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">真无线耳机</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="static/pages/shoppingmall.html" class="nav-link">商城</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">服务</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link"><span class="iconfont">&#xe62b;</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="list-box"></div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 img-items">
+                    <img src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190722/a94783fff9d8e7b16dcacf5f8795e048.jpg_w2554-h1160.jpg" alt="">
+                </div>
+                <div class="col-md-6 img-items">
+                    <img src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/home/20190927/5661c8b13dcca50ee66aa545c6c3b694.jpg_w2554-h1160.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
