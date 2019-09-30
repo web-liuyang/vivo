@@ -1,1 +1,169 @@
 // 首页
+.container-fluid {
+    padding: 0 !important;
+    overflow: hidden;
+    .row {
+        overflow: hidden;
+        .img-items {
+            width: 100%;
+            padding: 0 !important;
+            border: 5px solid white;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            .desc {
+                position: absolute;
+                top: 3%;
+                white-space: nowrap;
+            }
+            .des-b {
+                color: black;
+            }
+            img {
+                height: 500px;
+                position: relative;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 400px !important;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                img {
+                    height: 600px !important;
+                }
+            }
+            &:hover {
+                scale: 1.1;
+                cursor: pointer;
+                transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                /* IE 9 */
+                -moz-transform: scale(1.1);
+                /* Firefox */
+                -webkit-transform: scale(1.1);
+                /* Safari 和 Chrome */
+                -o-transform: scale(1.1);
+            }
+        }
+        .img-bigitem {
+            margin: 3px auto;
+            padding: 0;
+            position: relative;
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 50px !important;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                img {
+                    height: 300px !important;
+                }
+            }
+            img {
+                width: 100%;
+                height: 700px;
+                position: relative;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 500px !important;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                img {
+                    height: 300px !important;
+                }
+            }
+            .desc-2 {
+                position: absolute;
+                top: 20%;
+                left: -40%;
+                p {
+                    margin: 30px auto;
+                    .buy-bar {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+    .container-box {
+        .ct-list {
+            height: 500px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px !important;
+            &:hover .img-box {
+                width: 20%;
+            }
+            .img-box {
+                padding: 0px;
+                &:hover {
+                    width: 40%;
+                }
+                height: 100%;
+                width: 25%;
+                overflow: hidden;
+                transition: all .25s linear;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+            }
+        }
+        @media screen and (max-width: 1400px) {
+            .ct-list {
+                height: 380px !important;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            .ct-list {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                height: 860px !important;
+                &:hover .img-box {
+                    width: 100%;
+                }
+                .img-box {
+                    width: 100%;
+                    &:hover {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .ct-list {
+                display: grid;
+                grid-template-columns: 100%;
+                height: 2400px !important;
+                &:hover .img-box {
+                    width: 100%;
+                }
+                .img-box {
+                    width: 100%;
+                    border-bottom: 5px solid white;
+                    &:hover {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
