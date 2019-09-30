@@ -10,7 +10,6 @@ body,
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     height: 100%;
-    width: 100%;
 }
 
 $bg:rgb(51,
@@ -27,19 +26,89 @@ $font: 12px;
     display: block !important;
 }
 
-.none {
-    display: none !important;
+.flexd {
+    position: fixed !important;
+    top: 0 !important;
+    background: black !important;
 }
 
+.hover-img {
+    width: 40% !important;
+}
+
+.hover-imgs {
+    width: 20% !important;
+}
+
+// .flexd-resp {
+//     position: fixed !important;
+//     top: 0;
+// }
+// 折叠导航栏
+.respond-nav {
+    width: 100%;
+    padding: 0 !important;
+    z-index: 999;
+    .respond {
+        background: $bg;
+        .search-bar {
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+            display: none;
+        }
+        #res-nav {
+            margin-left: 30px;
+            .nav-left li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .symbol {
+                    font-size: 36px;
+                    padding-right: 20px;
+                }
+                span {
+                    color: $c;
+                    font-size: 16px;
+                    a {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        button {
+            margin-left: 10px;
+        }
+        .shop-pack {
+            font-family: "iconfont" !important;
+            font-size: 32px;
+            color: $c;
+            font-style: normal !important;
+        }
+        .logobar {
+            color: $c;
+            font-size: 36px;
+            &:hover {
+                color: rgb(65, 95, 255);
+            }
+        }
+        .none {
+            display: none !important;
+        }
+    }
+}
+
+// 第一排导航栏
 .padding-none {
     padding: 0 !important;
     background: $bg;
     .top-list {
         margin-left: 50px;
         li {
-            padding-right: 25px;
+            padding-right: 22px;
             a {
                 font-size: $font;
+                padding: 0;
                 color: $c;
             }
         }
@@ -65,42 +134,12 @@ $font: 12px;
     }
 }
 
+// 第二排导航栏和图片
 .top-nav {
     position: relative;
-    .img-bg {
-        overflow: hidden;
-        @media screen and (min-width: 1440px) {
-            .img {
-                height: 60% !important;
-            }
-        }
-        // @media screen and (max-width:768px) {
-        //     .img {
-        //         display: none !important;
-        //     }
-        // }
-    }
-    .img {
-        height: 100%;
-        position: relative;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-    .carousel-item {
-        position: relative;
-        .carousel-caption {
-            position: absolute;
-            top: 10%;
-            p {
-                margin: 30px auto;
-            }
-            &:last-child a {
-                color: white;
-            }
+    @media screen and (max-width: 768px) {
+        .app-bar {
+            display: none !important;
         }
     }
     .app-bar {
@@ -108,60 +147,16 @@ $font: 12px;
         width: 100%;
         position: absolute;
         top: 0;
-        z-index: 2;
+        z-index: 99;
+        background-color: transparent;
         .container {
-            .search-bar {
-                width: 300px;
-                height: 40px;
-                border-radius: 5px;
-                display: none;
-            }
-            #res-nav {
-                margin-left: 30px;
-                .nav-left li {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .symbol {
-                        font-size: 36px;
-                        padding-right: 20px;
-                    }
-                    span {
-                        color: $c;
-                        font-size: 16px;
-                        a {
-                            padding: 0;
-                        }
-                    }
-                }
-            }
-            button {
-                margin-left: 10px;
-            }
-            .shop-pack {
-                font-family: "iconfont" !important;
-                font-size: 32px;
-                color: $c;
-                font-style: normal !important;
-            }
-            .logobar {
-                color: $c;
-                font-size: 36px;
-                &:hover {
-                    color: rgb(65, 95, 255);
-                }
-            }
-            @media screen and (max-width:768px) {
-                .nav-flex {
-                    display: none !important;
-                }
-            }
             .nav-flex {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 li {
+                    line-height: 45px;
                     a {
                         color: $themeColor;
                         font-size: 18px;
@@ -188,19 +183,205 @@ $font: 12px;
         top: 0;
         z-index: 1;
     }
-}
-
-.img-items {
-    img {
-        height: 100%;
-        width: 100%;
+    .img-bg {
+        overflow: hidden;
         position: relative;
+        .desc-1 {
+            position: absolute;
+            top: 20%;
+            left: -40%;
+            padding: 0;
+            p {
+                margin: 30px auto;
+            }
+        }
+        @media screen and (max-width: 1440px) {
+            .img {
+                height: 600px !important;
+            }
+        }
+        @media screen and (max-width: 1040px) {
+            .img {
+                height: 500px !important;
+            }
+        }
+    }
+    .img {
         height: 100%;
+        position: relative;
         left: 50%;
         -webkit-transform: translateX(-50%);
         -moz-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         -o-transform: translateX(-50%);
         transform: translateX(-50%);
+    }
+    .carousel-item {
+        position: relative;
+        .carousel-caption {
+            position: absolute;
+            top: 10%;
+            p {
+                margin: 30px auto;
+            }
+            &:last-child a {
+                color: white;
+            }
+        }
+    }
+}
+
+.container-fluid {
+    padding: 0 !important;
+    overflow: hidden;
+    .row {
+        overflow: hidden;
+        .img-items {
+            width: 100%;
+            padding: 0 !important;
+            border: 5px solid white;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            .desc {
+                position: absolute;
+                top: 3%;
+                white-space: nowrap;
+            }
+            .des-b {
+                color: black;
+            }
+            img {
+                height: 500px;
+                position: relative;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 400px !important;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                img {
+                    height: 500px !important;
+                }
+            }
+            &:hover {
+                scale: 1.1;
+                cursor: pointer;
+                transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                /* IE 9 */
+                -moz-transform: scale(1.1);
+                /* Firefox */
+                -webkit-transform: scale(1.1);
+                /* Safari 和 Chrome */
+                -o-transform: scale(1.1);
+            }
+        }
+        .img-bigitem {
+            margin: 3px auto;
+            padding: 0;
+            position: relative;
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 50px !important;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                img {
+                    height: 300px !important;
+                }
+            }
+            img {
+                width: 100%;
+                height: 700px;
+                position: relative;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            @media screen and (max-width: 1440px) {
+                img {
+                    height: 500px !important;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                img {
+                    height: 300px !important;
+                }
+            }
+            .desc-2 {
+                position: absolute;
+                top: 20%;
+                left: -40%;
+                p {
+                    margin: 30px auto;
+                    .buy-bar {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+    /*   .container-box {
+        width: 100%;
+        .ct-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px !important;
+            li {
+                width: 25%;
+                overflow: hidden;
+                transition: all .25s linear;
+                position: relative;
+                &:hover {
+                    width: 630px;
+                }
+                img {
+                    width: 700px;
+                    vertical-align: middle;
+                    transform: translateX(-20%);
+                }
+            }
+        }
+    } */
+    .container-box {
+        .ct-list {
+            height: 500px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px !important;
+            &:hover .img-box {
+                width: 20%;
+            }
+            .img-box {
+                padding: 0px;
+                &:hover {
+                    width: 40%;
+                }
+                height: 100%;
+                width: 25%;
+                overflow: hidden;
+                transition: all .25s linear;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+            }
+        }
     }
 }
