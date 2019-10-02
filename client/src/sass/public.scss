@@ -218,3 +218,94 @@ $font: 12px;
         }
     }
 }
+
+// footer
+footer {
+    margin: 0 auto;
+    width: 80%;
+    .foot-wrap {
+        margin: 80px auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        section {
+            .title {
+                text-align: left;
+                margin-bottom: 50px;
+                font-weight: bold;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    list-style: none;
+                    margin-bottom: 10px;
+                    a {
+                        color: #8a8787;
+                        text-decoration: none;
+                        &:hover {
+                            color: blue;
+                        }
+                    }
+                }
+            }
+        }
+        .online {
+            grid-column: 6/8;
+            text-align: center;
+            .online-title {
+                font-size: 22px;
+                color: rgb(68, 67, 67);
+                margin-bottom: 50px;
+            }
+            .tel {
+                font-size: 22px;
+                color: blue;
+            }
+            .tel-des {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .foot-des {
+        border-top: 1px solid rgb(150, 149, 149);
+        margin-top: 40px;
+        text-align: center;
+        font-size: 13px;
+    }
+    #accordion {
+        display: none;
+    }
+    @media screen and(max-width:768px) {
+        #accordion {
+            display: block;
+            margin-top: 40px;
+        }
+    }
+    @media screen and(max-width:768px) {
+        .foot-wrap {
+            display: none;
+        }
+    }
+    .btn-lis {
+        color: rgb(131, 129, 129);
+        text-decoration: none;
+        font-size: 22px;
+    }
+    .card-body {
+        padding: 0 !important;
+        .lis-symbol {
+            padding: 0 !important;
+            li {
+                width: 100%;
+                list-style: none;
+                line-height: 60px;
+                padding: 0 !important;
+                span {
+                    margin-left: 60px;
+                    font-size: 22px;
+                    color: gray;
+                }
+            }
+        }
+    }
+}
