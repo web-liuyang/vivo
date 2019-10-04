@@ -16,6 +16,24 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`b_c1egdchcwrsjob` /*!40100 DEFAULT CHAR
 
 USE `b_c1egdchcwrsjob`;
 
+/*Table structure for table `order` */
+
+DROP TABLE IF EXISTS `order`;
+
+CREATE TABLE `order` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) NOT NULL COMMENT '账号|用户名',
+  `title` varchar(300) NOT NULL COMMENT '商品标题',
+  `color` varchar(40) NOT NULL COMMENT '商品颜色',
+  `url` varchar(300) NOT NULL COMMENT '商品图片',
+  `number` varchar(100) NOT NULL DEFAULT '1' COMMENT '商品数量',
+  `price` varchar(300) NOT NULL COMMENT '商品价格',
+  PRIMARY KEY (`username`),
+  KEY `ID` (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `order` */
+
 /*Table structure for table `shop` */
 
 DROP TABLE IF EXISTS `shop`;
@@ -94,7 +112,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`email`,`tel`,`icon`) values (0,'liuyang','123','984584014@qq.com','18284335838','http://127.0.0.1/images/icon/liuyang.jpg');
+insert  into `user`(`id`,`username`,`password`,`email`,`tel`,`icon`) values (0,'liuyang','123','984584014@qq.com','18284335838','liuyang');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
