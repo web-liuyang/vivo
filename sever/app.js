@@ -28,6 +28,8 @@ app.use(bodyParser.urlencoded({
 const shopRouter = require('./router/shop');
 app.use("/",shopRouter);
 
+const userRouter = require('./router/user');
+app.use("/",userRouter);
 
 // 7. 处理静态资源
 app.use(express.static("public"));
