@@ -1,18 +1,5 @@
 //公共
 $(function() {
-    /* 首页 */
-
-    $(document).scroll(function() {
-        let offset = $(document).scrollTop();
-        if (offset > 100) {
-            $(".app-bar").addClass("flexd");
-            $(".respond-nav").addClass("flexd")
-        }
-        if (offset < 100) {
-            $(".app-bar").removeClass("flexd")
-        }
-
-    })
 
 
     // 折叠栏

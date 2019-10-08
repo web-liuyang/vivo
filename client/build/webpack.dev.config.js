@@ -16,7 +16,7 @@ module.exports = {
     entry,
     // 出口
     output: {
-        path: path.resolve(__dirname, "../dist/"),
+        path: path.resolve(__dirname, "./dist/"),
         filename: "static/js/[name]-[hash:5].js",
         publicPath: "http://localhost:8090/"
     },

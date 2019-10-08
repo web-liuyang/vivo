@@ -26,10 +26,11 @@ app.use(bodyParser.urlencoded({
 }));
 // 6.处理路由
 const shopRouter = require('./router/shop');
-app.use("/",shopRouter);
+app.use("/", shopRouter);
 
 const userRouter = require('./router/user');
-app.use("/",userRouter);
+app.use("/", userRouter);
+
 
 // 7. 处理静态资源
 app.use(express.static("public"));

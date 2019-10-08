@@ -9,11 +9,49 @@ import "../js/public.js";
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
-$(function() {
 
 
 
 
 
+/* 首页 */
+
+$(document).scroll(function() {
+    let offset = $(document).scrollTop();
+    if (offset > 100) {
+        $(".app-bar").addClass("flexd");
+        $(".respond-nav").addClass("flexd")
+    }
+    if (offset < 100) {
+        $(".app-bar").removeClass("flexd")
+    }
 
 })
+
+
+
+
+
+
+
+function loaddingIndex(data) {
+    let htmlStr = "";
+    let lis_box = $(".list-box ul");
+
+    data.forEach((obj, index) => {
+        htmlStr += `<li>
+                <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
+                <p class="name">${obj.title}</p>
+                </li>
+                `
+    });
+    lis_box.html(htmlStr);
+}
+
+fetch("http://127.0.0.1:8081/in?classname_2=IQOO", {
+        method: "GET"
+    }).then(request => request.json())
+    .then(data => {
+        console.log(data)
+        loaddingIndex(data);
+    })
