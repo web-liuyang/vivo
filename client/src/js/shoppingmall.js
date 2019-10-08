@@ -10,36 +10,67 @@ import "../js/public.js";
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
-function loaddingpanic(data) {
-    let htmlStr = "";
-    let parent = $(".panic .panicgoods");
-    console.log(parent)
-    data.forEach((obj, index) => {
-        htmlStr += `
-        <li>
-        <img src="http://127.0.0.1:8081/images/fengll/${obj.img}">
-        <p>${obj.sellpoint}</p>
-        <h3>${obj.name}</h3>
-        <h4>${obj.dec}></h4>
-        <p><span class="price">￥${obj.price}<span class="oldprice">￥${obj.oldprice}</p>
-        </li>
-    `
-    })
+// function loaddingpanic(data) {
+//     let htmlStr = "";
+//     let parent = $(".panic .panicgoods");
+//     console.log(parent)
+//     data.forEach((obj, index) => {
+//         htmlStr += `
+//         <li>
+//         <img src="http://127.0.0.1:8081/images/fengll/${obj.img}">
+//         <p>${obj.sellpoint}</p>
+//         <h3>${obj.name}</h3>
+//         <h4>${obj.dec}></h4>
+//         <p><span class="price">￥${obj.price}<span class="oldprice">￥${obj.oldprice}</p>
+//         </li>
+//     `
+//     })
 
-    parent.html(htmlStr);
-    // console.log(parent.innerHTML);
-    console.log(1)
-}
+//     parent.html(htmlStr);
+//     // console.log(parent.innerHTML);
+//     console.log(1)
+// }
 
-fetch("http://127.0.0.1:8081/shop/panic")
-    .then(response => response.json())
-    .then(res => {
-        console.log(res);
-        loaddingpanic(res);
-    })
+// fetch("http://127.0.0.1:8081/shop/panic")
+//     .then(response => response.json())
+//     .then(res => {
+//         console.log(res);
+//         loaddingpanic(res);
+//     })
+
+//热卖专区
+// function loaddingHotpart(data) {
+//     let htmlStr = "";
+//     let parent = $(".hotpart .hotgoods");
+//     console.log(parent)
+//     data.forEach((obj, index) => {
+//         htmlStr += `
+//             <li>
+//             <img src="http://127.0.0.1:8081/images/liuyang/${obj.color_1_url_1}">
+//             <p><span>${obj.tittle}</span><span>${obj.vsn_1}</span></p>
+//             <h3>${obj.describe}</h3>
+//             </li>
+//         `
+//     })
+
+//     parent.html(htmlStr);
+//     // console.log(parent.innerHTML);
+//     console.log(1)
+// }
+
+// fetch("http://127.0.0.1:8081/shop/Hotpart")
+//     .then(response => response.json())
+//     .then(res => {
+//         console.log(res);
+//         loaddingpanic(res);
+//     })
+
+
+
+
 
 //偏移
-$(function(){
+$(function() {
     $("")
 })
 
@@ -49,7 +80,7 @@ var minute = document.querySelector(".minute");
 var second = document.querySelector(".second");
 // 定时函数
 var daojishi = setInterval(function() {
-    var s1 = new Date("2019/10/1 00:00:00");
+    var s1 = new Date("2019/12/1 00:00:00");
     var s2 = new Date();
     var s3 = s1 - s2;
     if (s3 == 0) {
@@ -65,3 +96,15 @@ var daojishi = setInterval(function() {
         second.textContent = seconds;
     }
 }, 1000)
+
+
+
+//category
+$(function() {
+    $(".category .cgli").hover(function() {
+        $(this).addClass("show").siblings().removeClass("show");
+    });
+    $(".category .cgli").mouseout(function() {
+        $(this).removeClass("show");
+    })
+});

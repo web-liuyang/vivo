@@ -1,142 +1,452 @@
-// 商城页
-$mg:0 auto;
-@font-face {
-    font-family: 'iconfont';
-    /* project id 1286665 */
-    src: url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.eot');
-    src: url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.woff2') format('woff2'), url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.woff') format('woff'), url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.ttf') format('truetype'), url('//at.alicdn.com/t/font_1286665_9ytwaeh3fb4.svg#iconfont') format('svg');
-}
-
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: 32px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.content {
-    width: 100%;
-    background: rgb(247, 247, 245);
-    #carouselExampleIndicators {
-        width: 100%;
-        height: 523px;
-        position: relative;
-        .carousel-inner {
-            width: 100%;
-            height: 523px;
-            overflow: hidden;
-            img {
-                height: 523px;
-            }
-        }
-    }
-    .wrapper {
-        margin: 0 auto;
-        width: 1200px;
-        background: pink;
-        position: relative;
-        .floor-list {
-            padding-top: 10px;
-            li {
-                display: inline-block;
-                width: 293px;
-                font-size: 0;
-                text-align: center;
-                transition: all .2s linear;
-                img {
-                    width: 100%;
-                }
-                &:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 1px 5px 10px lightgray;
-                    cursor: pointer;
-                }
-            }
-        }
-        .panic {
-            padding-top: 20px;
-            .countdown {
-                display: inline-block;
-                height: 26px;
-                img {
-                    width: 82px;
-                    height: 26px;
-                    margin-right: 5px;
-                }
-                p {
-                    font-size: 16px;
-                    color: #999;
-                    letter-spacing: 1px;
-                    span {
-                        display: inline-block;
-                        border-radius: 3px;
-                        width: 38px;
-                        height: 32px;
-                        line-height: 32px;
-                        text-align: center;
-                        background-color: #EC0404;
-                        font-size: 18px;
-                        color: #fff;
-                        margin: 0 6px;
-                    }
-                }
-            }
-            .pgbtn {
-                position: absolute;
-                top: 50%;
-                left: -100px;
-                color: #A4A4A4;
-            }
-            .panicgoods {
-                padding-top: 10px;
-                height: 380px;
-                white-space: nowrap;
-                overflow: hidden;
-                li {
-                    display: inline-block;
-                    width: 293px;
-                    height: 380px;
-                    margin-bottom: 10px;
-                    font-size: 0;
-                    text-align: center;
-                    background-color: #fff;
-                    transition: all .2s linear;
-                    img {
-                        width: 172px;
-                        height: 172px;
-                        margin-top: 41px;
-                    }
-                    h3 {
-                        font-size: 16px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis
-                    }
-                    h4 {
-                        line-height: 17px;
-                        margin-top: 10px;
-                        font-size: 12px;
-                        color: #333;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                    .price {
-                        font-size: 22px;
-                        color: #f51719;
-                        line-height: 1;
-                    }
-                    .oldprice {
-                        margin-left: 6px;
-                        text-decoration: line-through;
-                        color: #aaa;
-                        font-size: 14px;
-                        line-height: 1;
-                    }
-                }
-            }
-        }
-    }
-}
+ // 商城页
+ @font-face {
+     font-family: 'iconfont';
+     /* project id 1286665 */
+     src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot');
+     src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff') format('woff'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.svg#iconfont') format('svg');
+ }
+ 
+ .iconfont {
+     font-family: "iconfont" !important;
+     font-size: 32px;
+     font-style: normal;
+     -webkit-font-smoothing: antialiased;
+     -webkit-text-stroke-width: 0.2px;
+     -moz-osx-font-smoothing: grayscale;
+ }
+ 
+ $transform: translate3d(0,
+ -2px,
+ 0);
+ $box-shadow: 0px 15px 30px rgba(0,
+ 0,
+ 0,
+ .1);
+ .content {
+     width: 100%;
+     background: rgb(247, 247, 245);
+     #carouselExampleIndicators {
+         margin-top: 70px;
+         width: 100%;
+         height: 523px;
+         position: relative;
+         .carousel-inner {
+             width: 100%;
+             height: 523px;
+             overflow: hidden;
+             img {
+                 height: 523px;
+             }
+         }
+     }
+     .wrapper {
+         margin: 0 auto;
+         width: 1200px;
+         position: relative;
+         .topnav {
+             width: 1200px;
+             margin: 0 auto;
+             position: absolute;
+             top: -502px;
+             .category {
+                 height: 482px;
+                 width: 200px;
+                 background: rgba(255, 255, 255, .65);
+                 padding-top: 31px;
+                 position: relative;
+                 .cgli {
+                     writing-mode: horizontal-tb;
+                     width: 100%;
+                     a {
+                         display: block;
+                         padding: 0 48px 0 42px;
+                         color: #333;
+                         font-size: 14px;
+                         line-height: 60px;
+                         text-align: left;
+                         text-decoration: none;
+                         i {
+                             float: right;
+                             width: 6px;
+                             height: 10px;
+                             color: #333;
+                             font-size: 14px;
+                         }
+                     }
+                     .category-box {
+                         border-left: 14px solid transparent;
+                         background-clip: padding-box;
+                         position: absolute;
+                         top: 0;
+                         bottom: 0;
+                         left: 100%;
+                         .cgboxdetail {
+                             background: #fff;
+                             display: inline-block;
+                             vertical-align: top;
+                             padding: 8px 50px 0 44px;
+                             width: 750px;
+                             height: 482px;
+                             white-space: normal;
+                             .cgsub {
+                                 margin-bottom: 9px;
+                                 padding-bottom: 6px;
+                                 font-size: 1px;
+                                 border-bottom: 1px solid #e5e5e5;
+                                 li {
+                                     display: inline-block;
+                                     vertical-align: top;
+                                     margin-bottom: 12px;
+                                     width: 156px;
+                                     height: 50px;
+                                     border-radius: 6px;
+                                     background: pink;
+                                     position: relative;
+                                     overflow: hidden;
+                                     p {
+                                         line-height: 50px;
+                                         text-align: center;
+                                     }
+                                     img {
+                                         width: 35%;
+                                         position: absolute;
+                                         top: 15%;
+                                         right: -5px;
+                                     }
+                                 }
+                             }
+                             .cgproduct {
+                                 margin-bottom: -40px;
+                                 padding-top: 39px;
+                                 width: 690px;
+                                 font-size: 1px;
+                                 display: grid;
+                                 grid-template-columns: repeat(3, 33.33%);
+                                 li {
+                                     display: inline-block;
+                                     vertical-align: top;
+                                     margin-bottom: 20px;
+                                     width: 222px;
+                                     font-size: 0;
+                                     img {
+                                         vertical-align: middle;
+                                         width: 46px;
+                                         height: 46px;
+                                     }
+                                     span {
+                                         display: inline-block;
+                                         vertical-align: middle;
+                                         margin-left: 8px;
+                                         max-width: 168px;
+                                         color: #252525;
+                                         font-size: 14px;
+                                         white-space: nowrap;
+                                         overflow: hidden;
+                                         text-overflow: ellipsis;
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+                 .show {
+                     background: white;
+                 }
+             }
+         }
+         .floor-list {
+             padding-top: 10px;
+             li {
+                 display: inline-block;
+                 width: 293px;
+                 font-size: 0;
+                 text-align: center;
+                 transition: all .2s linear;
+                 img {
+                     width: 100%;
+                 }
+                 &:hover {
+                     transform: $transform;
+                     box-shadow: $box-shadow;
+                     cursor: pointer;
+                 }
+             }
+         }
+         .panic {
+             padding-top: 20px;
+             position: relative;
+             .countdown {
+                 display: inline-block;
+                 height: 26px;
+                 img {
+                     width: 82px;
+                     height: 26px;
+                     margin-right: 5px;
+                 }
+                 p {
+                     font-size: 16px;
+                     color: #999;
+                     letter-spacing: 1px;
+                     span {
+                         display: inline-block;
+                         border-radius: 3px;
+                         width: 38px;
+                         height: 32px;
+                         line-height: 32px;
+                         text-align: center;
+                         background-color: #EC0404;
+                         font-size: 18px;
+                         color: #fff;
+                         margin: 0 6px;
+                     }
+                 }
+             }
+             .pgbtn {
+                 position: absolute;
+                 top: 50%;
+                 color: #A4A4A4;
+             }
+             .prev {
+                 left: -50px;
+             }
+             .next {
+                 right: -50px;
+             }
+             .panicgoods {
+                 padding-top: 10px;
+                 height: 380px;
+                 white-space: nowrap;
+                 overflow: hidden;
+                 li {
+                     display: inline-block;
+                     width: 293px;
+                     height: 380px;
+                     margin-bottom: 10px;
+                     font-size: 0;
+                     text-align: center;
+                     background-color: #fff;
+                     transition: all .2s linear;
+                     img {
+                         width: 172px;
+                         height: 172px;
+                         margin-top: 41px;
+                     }
+                     h3 {
+                         font-size: 16px;
+                         white-space: nowrap;
+                         overflow: hidden;
+                         text-overflow: ellipsis
+                     }
+                     h4 {
+                         line-height: 17px;
+                         margin-top: 10px;
+                         font-size: 12px;
+                         color: #333;
+                         white-space: nowrap;
+                         overflow: hidden;
+                         text-overflow: ellipsis;
+                     }
+                     .price {
+                         font-size: 22px;
+                         color: #f51719;
+                         line-height: 1;
+                     }
+                     .oldprice {
+                         margin-left: 6px;
+                         text-decoration: line-through;
+                         color: #aaa;
+                         font-size: 14px;
+                         line-height: 1;
+                     }
+                 }
+             }
+         }
+         .pname {
+             padding: 38px 0 25px;
+             color: #333;
+             font-size: 24px;
+             line-height: 1;
+             text-align: center;
+         }
+         .hotpart {
+             padding-top: 20px;
+             .hotgoods {
+                 width: 100%;
+                 .box {
+                     text-align: center;
+                     font-size: 0;
+                     text-align: center;
+                     background-color: #fff;
+                     transition: all .2s linear;
+                     height: 511px;
+                     width: 394px;
+                     img {
+                         margin-top: 58px;
+                         width: 230px;
+                         height: 230px;
+                     }
+                     .name {
+                         padding-top: 29px;
+                         font-size: 20px;
+                         color: #333;
+                         line-height: 30px;
+                     }
+                     .dec {
+                         padding: 8px 50px 53px;
+                         font-size: 14px;
+                         color: #333;
+                         line-height: 24px;
+                     }
+                     .price {
+                         color: #f51919;
+                         font-size: 18px;
+                         line-height: 1;
+                     }
+                     &:hover {
+                         transform: $transform;
+                         box-shadow: $box-shadow;
+                         cursor: pointer;
+                     }
+                 }
+             }
+         }
+         .boutique {
+             padding-top: 20px;
+             .btqbox {
+                 transition: all .2s linear;
+                 width: 595px;
+                 height: 380px;
+                 img {
+                     width: 100%;
+                     height: 100%;
+                 }
+                 &:hover {
+                     transform: $transform;
+                     box-shadow: $box-shadow;
+                     cursor: pointer;
+                 }
+             }
+             .box {
+                 text-align: center;
+                 transition: all .2s linear;
+                 background: white;
+                 height: 380px;
+                 width: 293px;
+                 margin-bottom: 10px;
+                 img {
+                     margin-top: 43px;
+                     width: 172px;
+                     height: 172px;
+                 }
+                 .name {
+                     padding-top: 16px;
+                     color: #333;
+                     font-size: 16px;
+                     line-height: 30px;
+                 }
+                 .dec {
+                     padding: 2px 15px 40px;
+                     height: 24px;
+                     color: #333;
+                     font-size: 12px;
+                     line-height: 24px;
+                 }
+                 .price {
+                     color: #f51919;
+                     font-size: 16px;
+                     line-height: 1;
+                 }
+                 &:hover {
+                     transform: $transform;
+                     box-shadow: $box-shadow;
+                     cursor: pointer;
+                 }
+             }
+         }
+         .mountings {
+             padding: 20px 0;
+             position: relative;
+             .mnav {
+                 position: absolute;
+                 top: 63px;
+                 right: 20px;
+                 li {
+                     display: inline-block;
+                     margin-left: 22px;
+                     a {
+                         color: #333;
+                         font-size: 14px;
+                         line-height: 1;
+                     }
+                     &:hover {
+                         color: #f51919;
+                     }
+                 }
+             }
+             .box {
+                 text-align: center;
+                 transition: all .2s linear;
+                 background: white;
+                 height: 380px;
+                 width: 293px;
+                 margin-bottom: 10px;
+                 img {
+                     margin-top: 43px;
+                     width: 172px;
+                     height: 172px;
+                 }
+                 .name {
+                     padding-top: 16px;
+                     color: #333;
+                     font-size: 16px;
+                     line-height: 30px;
+                 }
+                 .dec {
+                     padding: 2px 15px 40px;
+                     height: 24px;
+                     color: #333;
+                     font-size: 12px;
+                     line-height: 24px;
+                 }
+                 .price {
+                     color: #f51919;
+                     font-size: 16px;
+                     line-height: 1;
+                 }
+                 &:hover {
+                     transform: $transform;
+                     box-shadow: $box-shadow;
+                     cursor: pointer;
+                 }
+             }
+         }
+     }
+ }
+ 
+ footer {
+     width: 1200px;
+ }
+ 
+ .vvs-agree {
+     width: 1200px;
+     padding: 30px 0;
+     border-bottom: 1px solid #dedede;
+     margin: 0 auto;
+     li {
+         display: inline-block;
+         width: 25%;
+         height: 28px;
+         line-height: 28px;
+         text-align: center;
+         a {
+             color: #333;
+             font-size: 18px;
+             cursor: default;
+             .icon {
+                 margin-right: 8px;
+                 font-size: 22px;
+                 vertical-align: -3px;
+             }
+         }
+     }
+ }

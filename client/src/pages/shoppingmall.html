@@ -10,7 +10,183 @@
 </head>
 
 <body>
-    <header></header>
+    <!-- 响应式折叠导航栏 -->
+    <nav class="navbar navbar-expand-md  navbar-dark respond-nav ">
+        <div class="container respond d-sm-none">
+            <button class="navbar-toggler unfold-btn" data-toggle="collapse" data-target="#res-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <input class="search-bar" type="text" placeholder="NEX旗舰版">
+            <a href="javascript:;" class="nav-link navbar-brand logobar">VIVO</a>
+            <a href="javascript:;" class="nav-link navbar-brand shop-pack d-md-none"><span
+                    class="iconfont">&#xe792;</span></a>
+            <div class="collapse navbar-collapse" id="res-nav">
+                <!-- 折叠导航内容 -->
+                <ul class="navbar-nav nav-left d-md-none">
+                    <li class="nav-item">
+                        <span> <a href="javascript:;" class="nav-link">IQOO专区</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">NEX系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">X系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">S系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">Z系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">Y系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item ">
+                        <span> <a href="javascript:;" class="nav-link">U系列</a></span>
+                        <span class="symbol">+</span>
+                    </li>
+                    <li class="nav-item">
+                        <span> <a href="javascript:;" class="nav-link">真无线耳机</a></span>
+                        <span class="symbol">></span>
+                    </li>
+                    <li class="nav-item">
+                        <span> <a href="javascript:;" class="nav-link">商城</a></span>
+                        <span class="symbol">></span>
+                    </li>
+                    <li class="nav-item">
+                        <span> <a href="javascript:;" class="nav-link">服务</a></span>
+                        <span class="symbol">></span>
+                    </li>
+                    <li class="nav-item">
+                        <span> <a href="javascript:;" class="nav-link">注册</a><a href="javascript:;"
+                                class="nav-link">登录</a></span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- header头部 -->
+    <header>
+        <div class="container-fuild d-none d-md-block">
+            <!-- 导航栏 -->
+            <nav class="padding-none navbar navbar-expand-md ">
+                <ul class="navbar-nav top-list">
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">品牌</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">funtouch OS</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">体验店</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">政企服务</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="# " class="nav-link ">社区</a>
+                    </li>
+                </ul>
+                <!-- 登录注册 -->
+                <ul class="navbar-nav ml-auto personal">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">登录</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">注册</a>
+                    </li>
+                </ul>
+                <div class="dropdown show personal-list">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        个人中心
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">商城</a>
+                        <a class="dropdown-item" href="#">购物车</a>
+                        <a class="dropdown-item" href="./static/pages/user.html">账号中心</a>
+                        <a class="dropdown-item" href="#">注销</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="top-nav">
+
+
+
+            <!-- 正常屏幕下的导航栏 -->
+            <nav class="navbar navbar-expand-md  navbar-dark app-bar">
+                <div class="container">
+                    <a href="javascript:;" class="nav-link navbar-brand ">VIVO</a>
+                    <ul class="navbar-nav nav-flex">
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">IQOO专区</span>
+                                <span class="change-name d-lg-none">IQOO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">NEX专区</span>
+                                <span class="change-name  d-lg-none">NEX</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">X系列</span>
+                                <span class="change-name  d-lg-none">X</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">S系列</span>
+                                <span class="change-name  d-lg-none">S</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">Z系列</span>
+                                <span class="change-name  d-lg-none">Z</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">Y系列</span>
+                                <span class="change-name  d-lg-none">Y</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">
+                                <span class="orangin-name d-none d-lg-block">U系列</span>
+                                <span class="change-name  d-lg-none ">U</span>
+                            </a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">真无线耳机</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="static/pages/shoppingmall.html" class="nav-link">商城</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link">服务</a>
+                        </li>
+                        <li class="nav-item box-item">
+                            <a href="javascript:;" class="nav-link"><span class="iconfont">&#xe62b;</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="list-box"></div>
+        </div>
+    </header>
     <main>
         <div class="content">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -39,15 +215,80 @@
                     </div>
                 </div>
 
+
+
             </div>
             <div class="wrapper">
+
+                <div class="topnav">
+                    <ul class="category">
+                        <li class="cgli" data-id="1"><a href="javascript:;">手机 <i class="iconfont">&#xe607;</i></a>
+                            <div class="category-box">
+                                <div class="cgboxdetail">
+                                    <p class="cgall">手机<span>全部手机</span></p>
+                                    <ul class="cgsub  justify-content-between row  no-gutters ">
+                                        <li>
+                                            <p>IQOO</p>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <p>NEX系列</p>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <p>IQOO</p>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <p>IQOO</p>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <p>IQOO</p>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                        </li>
+                                    </ul>
+                                    <ul class="cgproduct  ">
+                                        <li>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                            <span>NEX 3 5G版 8GB+256GB</span>
+                                        </li>
+                                        <li>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                            <span>NEX 3 5G版 8GB+256GB</span>
+                                        </li>
+                                        <li>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                            <span>NEX 3 5G版 8GB+256GB</span>
+                                        </li>
+                                        <li>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                            <span>NEX 3 5G版 8GB+256GB</span>
+                                        </li>
+                                        <li>
+                                            <img src="../images/IQOO Neo_dianguangpurple_1.png" alt="">
+                                            <span>NEX 3 5G版 8GB+256GB</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cgli" data-id="2"><a href="javascript:;">充电<i class="iconfont">&#xe607;</i></a>
+                        </li>
+                        <li class="cgli" data-id="3"><a href="javascript:;">音乐  <i class="iconfont">&#xe607;</i></a></li>
+                        <li class="cgli" data-id="4"><a href="javascript:;">配件 <i class="iconfont">&#xe607;</i></a></li>
+                        <li class="cgli" data-id="5"><a href="javascript:;">智能<i class="iconfont">&#xe607;</i></li>
+                        <li class="cgli" data-id="6"><a href="javascript:;">摄影<i class="iconfont">&#xe607;</i></li>
+                        <li class="cgli" data-id="7"><a href="javascript:;">生活<i class="iconfont">&#xe607;</i></li>
+                    </ul>
+                </div>
+
                 <ul class="floor-list justify-content-between row  no-gutters ">
                     <li> <img src="http://localhost:8081/images/fengll/flimg1.jpg" alt=""> </li>
                     <li> <img src="http://localhost:8081/images/fengll/flimg2.jpg" alt=""></li>
                     <li> <img src="http://localhost:8081/images/fengll/flimg3.jpg" alt=""></li>
                     <li> <img src="http://localhost:8081/images/fengll/flimg4.jpg" alt=""></li>
                 </ul>
-
                 <div class="panic">
                     <div class="countdown">
                         <p><img src="http://localhost:8081/images/fengll/qg.png" alt=""> 距离结束<span class="hour"></span>时<span class="minute"></span>分<span class="second"></span>秒
@@ -57,13 +298,458 @@
                     <div class="pgbtn next"><i class="iconfont">&#xe645;</i></div>
 
                     <div class="panicgoods  justify-content-between row  no-gutters">
+                        <li>
+                            <img src="http://127.0.0.1:8081/images/fengll/qgpic1.png">
+                            <p>${obj.sellpoint}</p>
+                            <h3>${obj.name}</h3>
+                            <h4>${obj.dec}></h4>
+                            <p><span class="price">￥${obj.price}</span><span class="oldprice">￥${obj.oldprice}</span></p>
+                        </li>
+                    </div>
+                </div>
+                <div class="hotpart">
+                    <p class="pname">热卖专区</p>
+                    <ul class="hotgoods justify-content-between row  no-gutters ">
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                    </ul>
 
+
+                </div>
+                <div class="boutique">
+                    <p class="pname">精品手机</p>
+                    <ul class="btqgoods justify-content-between row  no-gutters">
+                        <li class=" btqbox">
+                            <img src="../images/jingpin.jpg" alt="">
+
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mountings">
+                    <p class="pname">精品配件 </p>
+                    <ul class="mnav">
+                        <li><a href="javascript:;">充电</a> </li>
+                        <li><a href="javascript:;">配件</a></li>
+                        <li><a href="javascript:;">音乐</a></li>
+                        <li><a href="javascript:;">更多></a></li>
+                    </ul>
+                    <ul class="mtgoods justify-content-between row  no-gutters">
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                        <li class="box">
+                            <img src="../images/iQOO Pro_jingsublack_1.png" alt="">
+                            <p class="name"><span>iQOO Pro</span><span>8GB+128GB</span></p>
+                            <p class="dec">骁龙855 Plus/44W超快闪充</p>
+                            <p class="price">￥3198.00</p>
+                        </li>
+                    </ul>>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <ul class="vvs-agree">
+            <li><a href="javascript:;"><i class="iconfont icon">&#xe722;</i>官方正品</a></li>
+            <li><a href="javascript:;"><i class="iconfont icon">&#xe67f;</i>顺丰极速达</a></li>
+            <li><a href="javascript:;"><i class="iconfont icon">&#xeca1;</i>全国联保</a></li>
+            <li><a href="javascript:;"><i class="iconfont icon">&#xe600;</i>镭雕定制</a></li>
+        </ul>
+        <div class="foot-wrap">
+            <section>
+                <p class="title">热门链接</p>
+                <ul>
+                    <li>
+                        <a href="">X27</a>
+                    </li>
+                    <li>
+                        <a href=""> iQOO</a>
+                    </li>
+                    <li>
+                        <a href=""> Z3</a>
+                    </li>
+                    <li>
+                        <a href="">vivo摄影</a>
+                    </li>
+                    <li>
+                        <a href="">查找手机</a>
+                    </li>
+                    <li>
+                        <a href="">常见问题</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p class="title">在线购买</p>
+                <ul>
+                    <li>
+                        <a href="">官方商城</a>
+                    </li>
+                    <li>
+                        <a href="">选购手机</a>
+                    </li>
+                    <li>
+                        <a href="">选购配件</a>
+                    </li>
+                    <li>
+                        <a href="">政企服务</a>
+                    </li>
+                    <li>
+                        <a href="">以旧换新</a>
+                    </li>
+                    <li>
+                        <a href="">服务保障</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p class="title">服务支持</p>
+                <ul>
+                    <li>
+                        <a href="">服务首页</a>
+                    </li>
+                    <li>
+                        <a href=""> 服务网点查询</a>
+                    </li>
+                    <li>
+                        <a href="">真伪查询</a>
+                    </li>
+                    <li>
+                        <a href="">预约维修</a>
+                    </li>
+                    <li>
+                        <a href="">维修配件价格</a>
+                    </li>
+                    <li>
+                        <a href="">服务政策</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p class="title">vivo社区</p>
+                <ul>
+                    <li>
+                        <a href="">社区首页</a>
+                    </li>
+                    <li>
+                        <a href="">摄影专区</a>
+                    </li>
+                    <li>
+                        <a href="">微博</a>
+                    </li>
+                    <li>
+                        <a href="">贴吧</a>
+                    </li>
+                    <li>
+                        <a href="">兴趣部落</a>
+                    </li>
+
+                </ul>
+            </section>
+            <section>
+                <p class="title">关于vivo</p>
+                <ul>
+                    <li>
+                        <a href="">vivo简介</a>
+                    </li>
+                    <li>
+                        <a href="">工作机会</a>
+                    </li>
+                    <li>
+                        <a href=""> 新闻资讯</a>
+                    </li>
+                    <li>
+                        <a href="">采购平台</a>
+                    </li>
+                    <li>
+                        <a href="">供应商协同平台 </a>
+                    </li>
+                    <li>
+                        <a href="">开放平台</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="online">
+                <p class="online-title">在线客服</p>
+                <p class="tel">400-678-9688</p>
+                <p class="tel-des">24小时全国服务热线</p>
+                <p class="gz">关注vivo</p>
+            </section>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link  btn-lis" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                       热门链接
+                      </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body ">
+                        <ul class="lis-symbol">
+                            <li>
+                                <span>X27</span>
+                            </li>
+                            <li>
+                                <span> iQOO</sapn>
+                            </li>
+                            <li>
+                                <span> Z3</span>
+                            </li>
+                            <li>
+                                <span>vivo摄影</sapn>
+                            </li> 
+                            <li>
+                                <span>查找手机</sapn>
+                            </li> 
+                            <li>
+                                <span>常见问题</sapn>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed btn-lis" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                       在线购买
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body ">
+                        <ul  class="lis-symbol">
+                            <li>
+                                <span>官方商城</span>
+                            </li>
+                            <li>
+                                <span>选购手机</span>
+                            </li>
+                            <li>
+                                <span>选购配件</span>
+                            </li>
+                            <li>
+                                <span>政企服务</span>
+                            </li>
+                            <li>
+                                <span>以旧换新</span>
+                            </li>
+                            <li>
+                                <span>服务保障 </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed  btn-lis" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            服务支持
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body ">
+                        <ul class="lis-symbol">
+                            <li>
+                                <span>服务首页</span>
+                            </li>
+                            <li>
+                                <span> 服务网点查询</span>
+                            </li>
+                            <li>
+                                <span>真伪查询</span>
+                            </li>
+                            <li>
+                                <span>预约维修</span>
+                            </li>
+                            <li>
+                                <span>维修配件价格</span>
+                            </li>
+                            <li>
+                                <span>服务政策</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed  btn-lis" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            VIVO社区
+                          </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body  ">
+                        <ul class="lis-symbol">
+                            <li>
+                                <span>社区首页</span>
+                            </li>
+                            <li>
+                                <span>摄影专区</span>
+                            </li>
+                            <li>
+                                <span>微博</span>
+                            </li>
+                            <li>
+                                <span>贴吧</span>
+                            </li>
+                            <li>
+                                <span>兴趣部落</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed  btn-lis" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                关于VIVO
+                                  </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul class="lis-symbol">
+                                <li>
+                                    <span>vivo简介</span>
+                                </li>
+                                <li>
+                                    <span>工作机会</span>
+                                </li>
+                                <li>
+                                    <span> 新闻资讯</span>
+                                </li>
+                                <li>
+                                    <span>采购平台</span>
+                                </li>
+                                <li>
+                                    <span>供应商协同平台</span>
+                                </li>
+                                <li>
+                                    <span>开放平台</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-    <footer></footer>
+
+
+        <div class="foot-des">
+            Copyright ©2011-2019 广东步步高电子工业有限公司 版权所有 保留一切权利 | 隐私政策 | 法律声明 | 粤B2-20080267 | 粤ICP备05100288号 | 中国
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </footer>
 </body>
 
 </html>
