@@ -1,63 +1,9 @@
-@charset "utf-8";
-/* 这里是公共CSS样式编辑 */
-
-/* 取消内外间距 */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* 设置使用元素可以获取百分比高度 */
-html,
-body {
-    height: 100%;
-}
-
-/* 取消使用display后有间距的情况 */
-ul {
-    font-size: 0px;
-    list-style: none;
-}
-
-/* 取消ul/li前面的点 */
-ul li {
-    list-style: none;
-    font-size: 16px;
-}
-
-/* 清除a标签的下划线 */
-a {
-    text-decoration: none;
-}
-
-/* 兼容IE浏览器 */
-.cf {
-    zoom: 1;
-}
-
-/* 清除浮动全称是clearFloat */
-.cf::after {
-    content: "";
-    display: block;
-    width: 0px;
-    height: 0px;
-    overflow: hidden;
-    clear: both;
-}
-
-/* 取消input/button的点击后呈现蓝色边框效果 */
-input,
-button {
-    outline: none;
-}
-
-
 //公共
 @font-face {
     font-family: 'iconfont';
     /* project id 1293678 */
-    src: url('//at.alicdn.com/t/font_1293678_i604nym857.eot');
-    src: url('//at.alicdn.com/t/font_1293678_i604nym857.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1293678_i604nym857.woff2') format('woff2'), url('//at.alicdn.com/t/font_1293678_i604nym857.woff') format('woff'), url('//at.alicdn.com/t/font_1293678_i604nym857.ttf') format('truetype'), url('//at.alicdn.com/t/font_1293678_i604nym857.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.eot');
+    src: url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.woff2') format('woff2'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.woff') format('woff'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.ttf') format('truetype'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.svg#iconfont') format('svg');
 }
 
 body,
@@ -78,6 +24,10 @@ $themeColor:rgb(255,
 $font: 12px;
 .block {
     display: block !important;
+}
+
+.none {
+    display: none;
 }
 
 .flexd {
@@ -109,9 +59,13 @@ $font: 12px;
                     font-size: 36px;
                     padding-right: 20px;
                 }
+                .login-btn {
+                    padding-right: 20px;
+                }
                 span {
                     color: $c;
-                    font-size: 16px;
+                    font-size: 22px;
+                    line-height: 60px;
                     a {
                         padding: 0;
                     }
@@ -179,11 +133,11 @@ $font: 12px;
 // 第二排导航栏和图片
 .top-nav {
     position: relative;
-    @media screen and (max-width: 768px) {
+    /*     @media screen and (max-width: 768px) {
         .app-bar {
             display: none !important;
         }
-    }
+    } */
     .app-bar {
         padding: 0;
         width: 100%;
@@ -237,7 +191,7 @@ $font: 12px;
                 margin: 30px auto;
             }
         }
-        @media screen and (max-width: 1440px) {
+        /*         @media screen and (max-width: 1440px) {
             .img {
                 height: 600px !important;
             }
@@ -246,7 +200,7 @@ $font: 12px;
             .img {
                 height: 500px !important;
             }
-        }
+        } */
     }
     .img {
         height: 100%;
@@ -325,11 +279,13 @@ footer {
         margin-top: 40px;
         text-align: center;
         font-size: 13px;
+        padding: 40px 0 40px 0;
     }
     #accordion {
         display: none;
     }
-    @media screen and(max-width:768px) {
+    /* 
+       @media screen and(max-width:768px) {
         #accordion {
             display: block;
             margin-top: 40px;
@@ -339,7 +295,7 @@ footer {
         .foot-wrap {
             display: none;
         }
-    }
+    } */
     .btn-lis {
         color: rgb(131, 129, 129);
         text-decoration: none;

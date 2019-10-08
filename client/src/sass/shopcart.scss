@@ -1,1 +1,82 @@
 // 购物车
+body {
+    min-width: 1200px;
+}
+
+.app-bar {
+    background: rgb(238, 235, 235) !important;
+}
+
+.container-fuild {
+    width: 100%;
+}
+
+.container {
+    .navbar-brand {
+        display: block !important;
+        color: #333333 !important;
+        font: size 22px;
+    }
+    .nav-flex {
+        width: 100%;
+        li {
+            .nav-link {
+                color: #333333 !important;
+            }
+        }
+    }
+}
+
+main {
+    width: 60%;
+    margin: 100px auto;
+    .head-title {
+        height: 50px;
+        background: rgb(236, 233, 233);
+        width: 100%;
+        margin: 20px auto;
+        position: relative;
+        .goods {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        .more {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            a {
+                color: black;
+                font-size: 12px;
+                &:hover {
+                    color: red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .shop-car {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .shop-car thead tr td {
+        border: 1px solid grey;
+        text-align: center;
+        height: 30px;
+        .qx {
+            display: inline-block;
+            height: 14px;
+            width: 14px;
+            border: 1px solid red;
+            margin-right: 10px;
+        }
+    }
+    .shop-car tbody tr td {
+        border: 1px solid grey;
+        text-align: center;
+        color: rgb(117, 115, 115);
+        height: 45px;
+    }
+}

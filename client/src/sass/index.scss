@@ -1,4 +1,35 @@
 // 首页
+@media screen and (max-width: 768px) {
+    .app-bar {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .img-bg>.desc-1>.img {
+        height: 600px !important;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .img-bg>.desc-1>.img {
+        height: 500px !important;
+    }
+}
+
+@media screen and(max-width:768px) {
+    #accordion {
+        display: block !important;
+        margin-top: 40px;
+    }
+}
+
+@media screen and(max-width:768px) {
+    .foot-wrap {
+        display: none !important;
+    }
+}
+
 .container-fluid {
     padding: 0 !important;
     overflow: hidden;
