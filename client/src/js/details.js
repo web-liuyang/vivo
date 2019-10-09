@@ -39,13 +39,12 @@ $(function() {
     function loaddingDetails(data) {
         let htmlStr = "";
         let title = $(".title-iphone");
-
         data.forEach((obj, index) => {
             htmlStr += `
             <span>${obj.title}</span><span>${(function(){
             let v_des=$(".v-des>.select");
-           console.log(text(v-des))
-           return text(v-des);
+         console.log(v-des)
+
             })}</span>
                 `
         });

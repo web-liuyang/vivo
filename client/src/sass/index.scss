@@ -198,3 +198,17 @@
         }
     }
 }
+
+.to-top {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    .iconfont {
+        font-family: "iconfont";
+        font-size: 64px;
+        color: white;
+        background: grey;
+    }
+}
