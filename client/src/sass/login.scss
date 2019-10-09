@@ -1,1 +1,222 @@
 // 登录页
+@font-face {
+    font-family: 'iconfont';
+    /* project id 1286665 */
+    src: url('//at.alicdn.com/t/font_1286665_uzeijj5apq.eot');
+    src: url('//at.alicdn.com/t/font_1286665_uzeijj5apq.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1286665_uzeijj5apq.woff2') format('woff2'), url('//at.alicdn.com/t/font_1286665_uzeijj5apq.woff') format('woff'), url('//at.alicdn.com/t/font_1286665_uzeijj5apq.ttf') format('truetype'), url('//at.alicdn.com/t/font_1286665_uzeijj5apq.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 32px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: transparent!important;
+    letter-spacing: 1px!important;
+    border: none;
+    vertical-align: middle;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(13, 14, 32);
+    .content {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        .bgpic {
+            height: 780px;
+            img {
+                vertical-align: middle;
+            }
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 243px;
+            img {
+                display: block;
+                height: 52px;
+                width: 145px;
+            }
+        }
+        .login {
+            position: absolute;
+            top: 74px;
+            right: 0;
+            width: 420px;
+            background-color: hsla(0, 0%, 100%, .97);
+            .box {
+                padding: 30px 30px 20px;
+                min-height: 513px;
+                .pic {
+                    width: 160px;
+                    height: 42px;
+                    margin: auto;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+                }
+                .title {
+                    margin-top: 15px;
+                    font-size: 19px;
+                    font-weight: 400;
+                    font-stretch: normal;
+                    letter-spacing: 0;
+                    color: #000;
+                    text-align: center;
+                }
+                .toggle {
+                    text-align: right;
+                    font-size: 14px;
+                    color: #456fff;
+                    margin-top: 20px;
+                    cursor: pointer;
+                }
+                .phonebox {
+                    margin-top: 15px;
+                    width: 360px;
+                    height: 48px;
+                    border: 1px solid #dedfe0;
+                    input {
+                        height: 46px;
+                        font-size: 16px;
+                        color: #000;
+                        width: 100%;
+                        float: left;
+                        padding-left: 12px;
+                    }
+                }
+                .codebox {
+                    margin-top: 15px;
+                    height: 48px;
+                    line-height: 48px;
+                    padding-left: 12px;
+                    border: 1px solid #dedfe0;
+                    input {
+                        float: left;
+                        width: 226px;
+                        height: 46px;
+                        line-height: 46px;
+                        font-size: 16px;
+                    }
+                }
+                .check {
+                    margin-top: 19px;
+                    font-size: 14px;
+                    color: #666;
+                    text-align: right;
+                }
+                .tologin {
+                    display: block;
+                    width: 360px;
+                    height: 48px;
+                    line-height: 48px;
+                    font-size: 17px;
+                    color: #fff;
+                    text-align: center;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    background-color: #456fff;
+                }
+                .register {
+                    width: 360px;
+                    height: 48px;
+                    line-height: 48px;
+                    border: 1px solid #456fff;
+                    color: #456fff;
+                    font-size: 17px;
+                    text-align: center;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #d4dffa;
+                    }
+                }
+                .forget {
+                    font-size: 14px;
+                    color: #666;
+                    text-align: center;
+                    margin-top: 20px;
+                    cursor: pointer;
+                }
+                .other {
+                    margin-top: 30px;
+                    color: #999;
+                    font-size: 13px;
+                    text-align: center;
+                    p {
+                        &::after {
+                            content: "";
+                            width: 130px;
+                            height: 1px;
+                            background-color: #ccc;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                        }
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 130px;
+                            height: 1px;
+                            background-color: #ccc;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                        }
+                    }
+                    ul {
+                        margin-top: 15px;
+                        li {
+                            display: inline-block;
+                            margin-left: 15px;
+                            .iconfont {
+                                width: 26px;
+                                height: 26px;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding-top: 100px;
+    .online {
+        font-size: 11px;
+        text-align: center;
+        color: #666;
+        span {
+            margin-right: 20px;
+        }
+        img {
+            width: 12px;
+            height: 16px;
+            vertical-align: text-bottom;
+            margin-right: 10px;
+        }
+    }
+    .footdes {
+        padding: 0 0 10px 0;
+        font-size: 10px;
+        box-sizing: border-box;
+        color: #9d9d9d;
+        text-align: center;
+    }
+}

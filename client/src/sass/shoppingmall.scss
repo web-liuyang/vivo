@@ -124,6 +124,7 @@
                          font-size: 1px;
                          display: grid;
                          grid-template-columns: repeat(3, 33.33%);
+                         justify-content: space-between;
                          li {
                              display: inline-block;
                              vertical-align: top;
@@ -153,6 +154,9 @@
          }
          .floor-list {
              padding-top: 10px;
+             display: grid;
+             grid-template-columns: repeat(4, 25%);
+             justify-content: space-between;
              li {
                  display: inline-block;
                  width: 293px;
@@ -214,6 +218,9 @@
                  height: 380px;
                  white-space: nowrap;
                  overflow: hidden;
+                 display: grid;
+                 grid-template-columns: repeat(9, 25%);
+                 justify-content: space-between;
                  li {
                      display: inline-block;
                      width: 293px;
@@ -269,6 +276,9 @@
              padding-top: 20px;
              .hotgoods {
                  width: 100%;
+                 display: grid;
+                 grid-template-columns: repeat(3, 33.33%);
+                 justify-content: space-between;
                  .box {
                      text-align: center;
                      font-size: 0;
@@ -312,19 +322,10 @@
          }
          .boutique {
              padding-top: 20px;
-             .btqbox {
-                 transition: all .2s linear;
-                 width: 595px;
-                 height: 380px;
-                 img {
-                     width: 100%;
-                     height: 100%;
-                 }
-                 &:hover {
-                     transform: $transform;
-                     box-shadow: $box-shadow;
-                     cursor: pointer;
-                 }
+             .btqgoods {
+                 display: grid;
+                 grid-template-columns: repeat(4, 25%);
+                 justify-content: space-between;
              }
          }
          .mountings {
@@ -346,6 +347,11 @@
                          color: #f51919;
                      }
                  }
+             }
+             .mtgoods {
+                 display: grid;
+                 grid-template-columns: repeat(4, 25%);
+                 justify-content: space-between;
              }
          }
          .boxs {
@@ -391,10 +397,6 @@
              }
          }
      }
- }
- 
- footer {
-     width: 1200px;
  }
  
  .vvs-agree {
