@@ -1,4 +1,5 @@
 //引用css
+import "../sass/shopub.scss";
 import "../sass/public.scss";
 import "../sass/shoppingmall.scss";
 
