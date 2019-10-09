@@ -17,14 +17,21 @@
      -moz-osx-font-smoothing: grayscale;
  }
  
+ li {
+     list-style: none !important;
+ }
+ 
  .content {
+     margin-top: 70px;
      width: 100%;
      background: rgb(247, 247, 245);
+     position: relative;
      #carouselExampleIndicators {
-         margin-top: 70px;
+         z-index: 0;
          width: 100%;
          height: 523px;
-         position: relative;
+         position: absolute;
+         top: 0;
          .carousel-inner {
              width: 100%;
              height: 523px;
@@ -38,114 +45,118 @@
          margin: 0 auto;
          width: 1200px;
          position: relative;
-         .topnav {
+         .mask {
+             padding: 20px 0;
              width: 1200px;
              margin: 0 auto;
-             position: absolute;
-             top: -502px;
-             .category {
-                 height: 482px;
-                 width: 200px;
-                 background: rgba(255, 255, 255, .65);
-                 padding-top: 31px;
+             z-index: 111;
+             .topnav {
+                 width: 1200px;
+                 margin: 0 auto;
                  position: relative;
-                 .cgli {
-                     writing-mode: horizontal-tb;
-                     width: 100%;
-                     a {
-                         display: block;
-                         padding: 0 48px 0 42px;
-                         color: #333;
-                         font-size: 14px;
-                         line-height: 60px;
-                         text-align: left;
-                         text-decoration: none;
-                         i {
-                             float: right;
-                             width: 6px;
-                             height: 10px;
+                 .category {
+                     height: 482px;
+                     width: 200px;
+                     background: rgba(255, 255, 255, .65);
+                     padding-top: 31px;
+                     position: relative;
+                     .cgli {
+                         writing-mode: horizontal-tb;
+                         width: 100%;
+                         a {
+                             display: block;
+                             padding: 0 48px 0 42px;
                              color: #333;
                              font-size: 14px;
+                             line-height: 60px;
+                             text-align: left;
+                             text-decoration: none;
+                             i {
+                                 float: right;
+                                 width: 6px;
+                                 height: 10px;
+                                 color: #333;
+                                 font-size: 14px;
+                             }
                          }
                      }
+                     .show {
+                         background: white;
+                     }
                  }
-                 .show {
-                     background: white;
-                 }
-             }
-             .category-box {
-                 border-left: 14px solid transparent;
-                 background-clip: padding-box;
-                 position: absolute;
-                 top: 0;
-                 bottom: 0;
-                 left: 90px;
-                 .cgboxdetail {
-                     background: #fff;
-                     display: inline-block;
-                     vertical-align: top;
-                     padding: 8px 50px 0 44px;
-                     width: 750px;
-                     height: 482px;
-                     white-space: normal;
-                     //  .cgsub {
-                     //      margin-bottom: 9px;
-                     //      padding-bottom: 6px;
-                     //      font-size: 1px;
-                     //      border-bottom: 1px solid #e5e5e5;
-                     //      li {
-                     //          display: inline-block;
-                     //          vertical-align: top;
-                     //          margin-bottom: 12px;
-                     //          width: 156px;
-                     //          height: 50px;
-                     //          border-radius: 6px;
-                     //          background: pink;
-                     //          position: relative;
-                     //          overflow: hidden;
-                     //          p {
-                     //              line-height: 50px;
-                     //              text-align: center;
-                     //          }
-                     //          img {
-                     //              width: 35%;
-                     //              position: absolute;
-                     //              top: 15%;
-                     //              right: -5px;
-                     //          }
-                     //      }
-                     //  }
-                     .cgproduct {
-                         margin-bottom: -40px;
-                         padding: 39px;
-                         width: 690px;
-                         height: 350px;
-                         overflow: hidden;
-                         font-size: 1px;
-                         display: grid;
-                         grid-template-columns: repeat(3, 33.33%);
-                         justify-content: space-between;
-                         li {
-                             display: inline-block;
-                             vertical-align: top;
-                             margin-bottom: 20px;
-                             width: 222px;
-                             font-size: 0;
-                             img {
-                                 vertical-align: middle;
-                                 width: 46px;
-                                 height: 46px;
-                             }
-                             span {
+                 .category-box {
+                     position: absolute;
+                     top: 0;
+                     left: 90px;
+                     border-left: 14px solid transparent;
+                     background-clip: padding-box;
+                     .cgboxdetail {
+                         background: #fff;
+                         display: inline-block;
+                         vertical-align: top;
+                         padding: 8px 50px 0 44px;
+                         width: 750px;
+                         height: 482px;
+                         white-space: normal;
+                         //  .cgsub {
+                         //      margin-bottom: 9px;
+                         //      padding-bottom: 6px;
+                         //      font-size: 1px;
+                         //      border-bottom: 1px solid #e5e5e5;
+                         //      li {
+                         //          display: inline-block;
+                         //          vertical-align: top;
+                         //          margin-bottom: 12px;
+                         //          width: 156px;
+                         //          height: 50px;
+                         //          border-radius: 6px;
+                         //          background: pink;
+                         //          position: relative;
+                         //          overflow: hidden;
+                         //          p {
+                         //              line-height: 50px;
+                         //              text-align: center;
+                         //          }
+                         //          img {
+                         //              width: 35%;
+                         //              position: absolute;
+                         //              top: 15%;
+                         //              right: -5px;
+                         //          }
+                         //      }
+                         //  }
+                         .cgproduct {
+                             margin-bottom: -40px;
+                             padding: 39px;
+                             width: 690px;
+                             height: 350px;
+                             overflow: hidden;
+                             font-size: 1px;
+                             display: grid;
+                             grid-template-columns: repeat(3, 33.33%);
+                             justify-content: space-between;
+                             li {
                                  display: inline-block;
-                                 vertical-align: middle;
-                                 margin-left: 8px;
-                                 max-width: 168px;
-                                 color: #252525;
-                                 font-size: 14px;
-                                 white-space: nowrap;
-                                 overflow: hidden;
-                                 text-overflow: ellipsis;
+                                 vertical-align: top;
+                                 margin-bottom: 20px;
+                                 width: 222px;
+                                 font-size: 0;
+                                 img {
+                                     vertical-align: middle;
+                                     width: 46px;
+                                     height: 46px;
+                                 }
+                                 span {
+                                     display: inline-block;
+                                     vertical-align: middle;
+                                     margin-left: 8px;
+                                     max-width: 168px;
+                                     color: #252525;
+                                     font-size: 14px;
+                                     white-space: nowrap;
+                                     overflow: hidden;
+                                     text-overflow: ellipsis;
+                                 }
                              }
                          }
                      }

@@ -77,13 +77,6 @@ main {
                     color: #000;
                     text-align: center;
                 }
-                .toggle {
-                    text-align: right;
-                    font-size: 14px;
-                    color: #456fff;
-                    margin-top: 20px;
-                    cursor: pointer;
-                }
                 .phonebox {
                     margin-top: 15px;
                     width: 360px;
@@ -101,15 +94,16 @@ main {
                 .codebox {
                     margin-top: 15px;
                     height: 48px;
+                    width: 360px;
                     line-height: 48px;
-                    padding-left: 12px;
                     border: 1px solid #dedfe0;
                     input {
-                        float: left;
-                        width: 226px;
                         height: 46px;
-                        line-height: 46px;
                         font-size: 16px;
+                        color: #000;
+                        width: 100%;
+                        float: left;
+                        padding-left: 12px;
                     }
                 }
                 .check {
@@ -180,9 +174,10 @@ main {
                     }
                     ul {
                         margin-top: 15px;
+                        text-align: center;
                         li {
                             display: inline-block;
-                            margin-left: 15px;
+                            margin: 0 15px;
                             .iconfont {
                                 width: 26px;
                                 height: 26px;
