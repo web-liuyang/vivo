@@ -34,6 +34,25 @@ CREATE TABLE `order` (
 
 /*Data for the table `order` */
 
+/*Table structure for table `panic` */
+
+DROP TABLE IF EXISTS `panic`;
+
+CREATE TABLE `panic` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `img` varchar(200) NOT NULL,
+  `sellpoint` varchar(200) DEFAULT NULL,
+  `name` varchar(200) NOT NULL,
+  `dec` varchar(200) NOT NULL,
+  `price` varchar(200) NOT NULL,
+  `oldprice` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+/*Data for the table `panic` */
+
+insert  into `panic`(`id`,`img`,`sellpoint`,`name`,`dec`,`price`,`oldprice`) values (1,'qgpic1.png',NULL,'Z5 6GB+128GB','极光幻境	骁龙712处理器，4800万超广角AI三摄，前置3200万超清自拍，4500mAh大电池	','1720	','2057'),(2,'qgpic2.png	','套餐抢购','iQOO Neo 6GB+128GB ','电光紫	加价10元抢飞智拉伸手柄（6+128适用）','1908','2087'),(3,'gpic3.png','5折秒杀	','vivo 22.5W（5V/4.5A）','低压闪充充电器	原装低压闪充充电头，闪充功能需搭配专用闪充数据线使用。（仅支持X9Plus，X20Plus，其它型号不支持）','34.5	','	69'),(4,'qgpic4.png	','套餐抢购','Z3x 6GB+64GB','炫慕红	加价22抢XE680耳机','1220','	1357'),(5,'qgpic5.png','套餐抢购','Z3 全面屏 6GB+64GB ','极光蓝	加价22抢XE680耳机，3期免息（6+64适用）','1170','1370'),(6,'qgpic6.png','限时抢购','飞毛腿 V10','移动电源	飞毛腿移动电源 V10，10000mAh容量，九重安全防护，智能充放；高密度锂聚合物电芯，输出稳定；铝合金外壳设计，精致小巧，时尚便携。','159','179'),(7,'qgpic7.png','	6期免息','Z5x 6GB+128GB','极光色	6期免息（6+128适用）','1498','1598'),(8,'qgpic8.png','5折秒杀','Y7s','原装高透保护膜	两片装，高清高透，还原屏幕真实观感；超薄设计，享受灵敏屏幕指纹解锁；防油抗污，洁净如新；耐磨抗刮，经久耐用。','14.5','29'),(9,'qgpic9.png','直降50','猎奇','三合一手机镜头	抗畸变，成像更真实；0.6X大广角，宽阔视野；15X高清微距，1-3厘米清晰对焦；180°鱼眼，创意摄影，夸张乐趣无限；创新二合一设计，转换镜头更容易','109','159');
+
 /*Table structure for table `shop` */
 
 DROP TABLE IF EXISTS `shop`;
@@ -100,19 +119,19 @@ insert  into `shop`(`id`,`classname_1`,`classname_2`,`classname_3`,`title`,`desc
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nikename` varchar(500) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `tel` varchar(11) DEFAULT NULL,
-  `icon` varchar(500) DEFAULT NULL,
+  `email` varchar(45) NOT NULL,
+  `tel` varchar(11) NOT NULL,
   PRIMARY KEY (`username`),
   KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`email`,`tel`,`icon`) values (0,'liuyang','123','984584014@qq.com','18284335838','liuyang');
+insert  into `user`(`id`,`nikename`,`username`,`password`,`email`,`tel`) values (1,'刘洋','liuyang','123','984584014@qq.com','18284335838'),(2,'刘洋','asdasd','asdasd','a@qq.com','18284335838');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
