@@ -15,9 +15,9 @@ router.post("/login", (req, res) => {
     db.connect();
     // 数据库指令，结构的参数，函数输出结果
     db.query(mysqlyuju, jiegou, (err, sqlRes) => {
-            if (sqlRes[0].length == 0) {
+            if (sqlRes.length == 0) {
                 res.send({ tishi: "账号不存在" })
-            } else if (sqlRes.password == password) {
+            } else if (sqlRes[0].password == password) {
                 res.send({ tishi: "登陆成功" })
             } else {
                 res.send({ tishi: "密码错误" })

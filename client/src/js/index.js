@@ -41,10 +41,11 @@ $(document).scroll(function() {
             "display": "none"
         })
     }
-    $(".to-top").click(function() {
-        $("html,body").animate({ scrollTop: 0 }, 1000)
-    });
+
 })
+$(".to-top").click(function() {
+    $("html,body").animate({ scrollTop: 0 }, 1000)
+});
 
 
 

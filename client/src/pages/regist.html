@@ -16,17 +16,33 @@
         </div>
         <h4>账号注册</h4>
         <form action="">
-            <input type="text" placeholder="请输入昵称"></br>
-            </br>
-            <input type="text" placeholder="请输入账号"></br>
-            </br>
-            <input type="password" placeholder="请输入密码"></br>
-            </br>
-            <input type="e-mail" placeholder="请输入邮箱"></br>
-            </br>
-            <input type="tel" placeholder="请输入电话号码">
+            <section data-reg="^\w{4,11}$" data-errMsg="输入不合法，格式为：4~11位字母、数字、下划线">
+                <input type="text" placeholder="请输入用户名"></br>
+            </section>
+            <section data-reg="^\d{6}$" data-errMsg="输入不合法，格式为：6位数字">
+                <input type="text" placeholder="请输入账号">
+            </section>
+            <section data-reg="^\w{8,11}$" data-errMsg="输入不合法，格式为：8~11位字母、数字、下划线">
+                <input type="password" placeholder="请输入密码">
+            </section>
+            <section data-reg="@" data-errMsg="邮箱格式不正确">
+                <input type="e-mail" placeholder="请输入邮箱">
+            </section>
+            <section data-reg="^1[3-9]\d{9}$" data-errMsg="手机格式不正确">
+                <input type="tel" placeholder="请输入电话号码">
+            </section>
+            <p class="zh-dl"><a href="login.html">已有账号，点击登录！</a></p>
+            <button type="button" class="btn">注册</button>
         </form>
+
+
     </div>
+    <footer>
+        <div class="footer-des">
+            <p> 在线客服 400-678-9688(24小时全国服务热线)</p>
+            <p>COPYRIGHT ©2011-2019 广东步步高电子工业有限公司 版权所有 保留一切权利 | 隐私政策 | 法律声明 | 粤B2-20080267 | 粤ICP备05100288号</p>
+        </div>
+    </footer>
 </body>
 
 </html>
