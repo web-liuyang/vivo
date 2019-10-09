@@ -11,13 +11,13 @@ import "../js/public.js";
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 //抢购
+
 function loaddingpanic(data) {
     let htmlStr = "";
     let parent = $(".panic .panicgoods");
-    console.log(parent)
     data.forEach((obj, index) => {
         htmlStr += `
-        <li>
+        <li class="item">
         <img src="http://127.0.0.1:8081/images/fengll/${obj.img}">
         <p>${obj.sellpoint}</p>
         <h3>${obj.name}</h3>
@@ -27,25 +27,20 @@ function loaddingpanic(data) {
     `
     })
     parent.html(htmlStr);
-    // console.log(parent.innerHTML);
-    console.log(1)
 }
-
 fetch("http://127.0.0.1:8081/panic")
     .then(response => response.json())
     .then(res => {
-        console.log(res);
         loaddingpanic(res);
     })
 
 //热卖专区
-
 function loaddingHotpart(data) {
     let htmlStr = "";
     let parent = $(".hotpart .hotgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="box">
+        <li class="box item" id="${obj.id}"  value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span><span>${obj.vsn_1}</span></p>
         <p class="dec">${obj.describe}</p>
@@ -53,11 +48,8 @@ function loaddingHotpart(data) {
     </li>     
         `
     })
-
     parent.html(htmlStr);
-    // console.log(parent.innerHTML);
 }
-
 fetch("http://127.0.0.1:8081/Hotpart?classname_3=hot")
     .then(response => response.json())
     .then(res => {
@@ -68,28 +60,21 @@ fetch("http://127.0.0.1:8081/Hotpart?classname_3=hot")
 function loaddingBoutique(data) {
     let htmlStr = "";
     let parent = $(".boutique .btqgoods");
-    console.log(parent)
     data.forEach((obj, index) => {
         htmlStr += `
-        
-        <li class="boxs">
+        <li class="boxs item" id="${obj.id} "value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span><span>${obj.vsn_1}</span></p>
         <p class="dec">${obj.describe}</p>
         <p class="price">￥${obj.price}</p>
-    </li>     
-        `
+    </li>       `
     })
-
     parent.html(htmlStr);
-    // console.log(parent.innerHTML);
-    console.log(1)
 }
 
 fetch("http://127.0.0.1:8081/boutique?classname_3=jingpiniphone")
     .then(response => response.json())
     .then(res => {
-        console.log(res);
         loaddingBoutique(res);
     })
 
@@ -97,57 +82,48 @@ fetch("http://127.0.0.1:8081/boutique?classname_3=jingpiniphone")
 function loaddingMountings(data) {
     let htmlStr = "";
     let parent = $(".mountings .mtgoods");
-    console.log(parent)
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="boxs">
+        <li class="boxs item"  id="${obj.id}" value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/parts/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span></p>
         <p class="dec">${obj.describe}</p>
         <p class="price">￥${obj.price}</p>
-    </li>     
-        `
+    </li>  `
     })
-
     parent.html(htmlStr);
-    // console.log(parent.innerHTML);
-    console.log(1)
 }
 
 fetch("http://127.0.0.1:8081/mountings?classname_3=jingpinparts")
     .then(response => response.json())
     .then(res => {
-        console.log(res);
         loaddingMountings(res);
     })
-    //category
+
+//菜单
 function loaddingCategory(data) {
     let htmlStr = "";
     let parent = $(".category-box .cgproduct");
-    console.log(parent)
+    let val = $(".cgli").attr("value");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li>
+        <li class="item" id="${obj.id} value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
           <span>${obj.title}</span>
-    </li>
-        `
+    </li>`
     })
 
+    htmlStr = `
+    <p class="cgall">${val}<span>全部${val}></span></p>
+    ${htmlStr}`
     parent.html(htmlStr);
-    // console.log(parent.innerHTML);
-    console.log(2)
 }
 
 fetch("http://127.0.0.1:8081/category?classname_1=iphone")
     .then(response => response.json())
     .then(res => {
-        console.log(res);
-        console.log("category");
         loaddingCategory(res);
     })
-
-
 
 
 //定时器
@@ -162,7 +138,6 @@ var daojishi = setInterval(function() {
     if (s3 == 0) {
         clearTimeout(daojishi);
     } else {
-
         var hours = Math.floor(s3 / 1000 / 60 / 60);
         var minutes = Math.floor(s3 / 1000 / 60 % 60);
         var seconds = Math.floor(s3 / 1000 % 60);
@@ -173,8 +148,6 @@ var daojishi = setInterval(function() {
     }
 }, 1000)
 
-
-
 //category
 $(function() {
     $(".category .cgli").hover(function() {
@@ -182,7 +155,16 @@ $(function() {
     });
     $(".category .cgli").mouseout(function() {
         $(this).removeClass("show");
-
     });
+
+});
+
+//跳转
+
+$(function() {
+    $(".cgli").click(function() {
+        let val = $(this).attr("value");
+        console.log(val);
+    })
 
 });

@@ -129,12 +129,23 @@
                              margin-bottom: -40px;
                              padding: 39px;
                              width: 690px;
-                             height: 350px;
+                             height: 400px;
                              overflow: hidden;
                              font-size: 1px;
                              display: grid;
                              grid-template-columns: repeat(3, 33.33%);
                              justify-content: space-between;
+                             .cgall {
+                                 width: 690px;
+                                 grid-column: 1/4;
+                                 padding-bottom: 20px;
+                                 position: relative;
+                                 span {
+                                     position: absolute;
+                                     top: 0;
+                                     right: 180px;
+                                 }
+                             }
                              li {
                                  display: inline-block;
                                  vertical-align: top;
