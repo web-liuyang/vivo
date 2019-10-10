@@ -11,7 +11,7 @@ const webpack = require("webpack");
 //压缩css
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 //JQuery
-const $ = require("jquery")
+// const $ = require("jquery")
 // 插件
 module.exports = [
     //因为是数组所以要序列话，否则就成为二维数组
@@ -42,8 +42,6 @@ module.exports = [
     
     new webpack.ProvidePlugin({
         $:"jquery",
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
         Popper:['popper.js', 'default']
     })
 

@@ -5,9 +5,8 @@ import {
     loaddingerji
 } from '../js/fn.js';
 //公共
-$(function() {
 
-    // 折叠栏
+// export function public2() { // 折叠栏??
     //二级菜单
     loaddingerji('IQOO', 0)
     loaddingerji('NEX', 1)
@@ -19,7 +18,7 @@ $(function() {
     loaddingerji('music', 7, 'parts')
 
     // 导航栏折叠后的折叠按钮
-    $(".unfold-btn").click(function() {
+    $(".unfold-btn").click(function () {
         $("header").toggleClass("none");
         $("main").toggleClass("none");
         $("footer").toggleClass("none");
@@ -32,12 +31,12 @@ $(function() {
             $logobar.addClass("none");
             $(".search-bar").addClass("block");
             $("body,html").css({
-                "background": "#ffffff" 
+                "background": "#ffffff"
             })
         }
     })
 
-    $(".box-item").hover(function() {
+    $(".box-item").hover(function () {
 
         $(".list-box").css({
             "display": "block"
@@ -52,7 +51,7 @@ $(function() {
             "color": "#000000"
         })
 
-    }, function() {
+    }, function () {
         $(".list-box").css({
             "display": "none"
         });
@@ -92,11 +91,14 @@ $(function() {
 
 
     // 注销登录
-    $(".log-out").click(function() {
+    $(".log-out").click(function () {
         console.log($(".logout"))
         sessionStorage.removeItem("user");
         confirm("您确定退出登录吗？")
         location.href = "http://127.0.0.1:8090/static/pages/login.html";
     })
 
-})
+// }
+
+console.log(12321321321)
+
