@@ -14,7 +14,7 @@ import {
 
 
 
-$(".tologin").click(function () {
+$(".tologin").click(function() {
     if ($(".phonebox>input").val() == "" || $(".codebox>input").val() == "") {
         alert("请输入账号或密码")
     } else {
@@ -40,9 +40,10 @@ $(".tologin").click(function () {
                 if (data.tishi == "登陆成功") {
                     sessionStorage.user = JSON.stringify({
                         username: data.data[0].username,
-                        nikename:data.data[0].nikename,
-                        tel:data.data[0].tel,
-                        email:data.data[0].email
+                        nikename: data.data[0].nikename,
+                        tel: data.data[0].tel,
+                        email: data.data[0].email,
+                        password: data.data[0].password,
                     });
                     location.href = "http://127.0.0.1:8090";
                 }
