@@ -32,7 +32,7 @@ fetch("http://127.0.0.1:8081/panic")
     .then(response => response.json())
     .then(res => {
         loaddingpanic(res);
-        $(".cargo").click(function() {
+        $(".cargo").click(function () {
             let id = this.id;
             location.href = `detail.html?id=${id}`
         })
@@ -59,7 +59,7 @@ fetch("http://127.0.0.1:8081/Hotpart?classname_3=hot")
     .then(response => response.json())
     .then(res => {
         loaddingHotpart(res);
-        $(".cargo").click(function() {
+        $(".cargo").click(function () {
             let id = this.id;
             location.href = `detail.html?id=${id}`
         })
@@ -85,7 +85,7 @@ fetch("http://127.0.0.1:8081/boutique?classname_3=jingpiniphone")
     .then(response => response.json())
     .then(res => {
         loaddingBoutique(res);
-        $(".cargo").click(function() {
+        $(".cargo").click(function () {
             let id = this.id;
             location.href = `detail.html?id=${id}`
         })
@@ -111,14 +111,76 @@ fetch("http://127.0.0.1:8081/mountings?classname_3=jingpinparts")
     .then(response => response.json())
     .then(res => {
         loaddingMountings(res);
-        $(".cargo").click(function() {
+        $(".cargo").click(function () {
             let id = this.id;
             location.href = `detail.html?id=${id}`
         })
     })
 
 //菜单
+let $uls = $(".category .cgli>ul");
 
+$uls.each(function (index, item) {
+    if (item.id == "iphone") {
+        $.ajax({
+            type: "GET", //默认get
+            url: `http://127.0.0.1:8081/shoppingmallerji?classname_1=${item.id}`, //默认当前页
+            data: "data", //格式{key:value}
+            dataType: "json",
+            beforeSend: function () {}, //请求发送前回调,常用验证
+            success: function (response) { //请求成功回调
+                let htmlStr = "";
+                response.forEach(function (item, index) {
+                    htmlStr += `<li id=${item.id}><img src="http://127.0.0.1:8081/images/iphone/${item.color_1_url_1}.png"><span>${item.title}</span></li>`;
+                })
+                $($uls[index]).html(`<li>${(function(){
+                    return ($($uls[index]).parent().attr("value"));
+                })()}</li>`+htmlStr);
+                let $lis = $(".category .cgli>ul li");
+                $lis.each(function(index,item){
+                    item.onclick = function(){
+                        location.href = `http://localhost:8090/static/pages/details.html?id=${item.id}`
+                    }
+                })
+            },
+            error: function (e) { //请求超时回调
+                if (e.statusText == "timeout") {
+                    alert("请求超时");
+                }
+            },
+            complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
+        });
+    } else {
+        $.ajax({
+            type: "GET", //默认get
+            url: `http://127.0.0.1:8081/homeerji?classname_2=${item.id}`, //默认当前页
+            data: "data", //格式{key:value}
+            dataType: "json",
+            beforeSend: function () {}, //请求发送前回调,常用验证
+            success: function (response) { //请求成功回调
+                let htmlStr = "";
+                response.forEach(function (item, index) {
+                    htmlStr += `<li id=${item.id}><img src="http://127.0.0.1:8081/images/parts/${item.color_1_url_1}.png"><span>${item.title}</span></li>`
+                })
+                $($uls[index]).html(`<li>${(function(){
+                    return ($($uls[index]).parent().attr("value"));
+                })()}</li>`+htmlStr);
+                let $lis = $(".category .cgli>ul li");
+                $lis.each(function(index,item){
+                    item.onclick = function(){
+                        location.href = `http://localhost:8090/static/pages/details.html?id=${item.id}`
+                    }
+                })
+            },
+            error: function (e) { //请求超时回调
+                if (e.statusText == "timeout") {
+                    alert("请求超时");
+                }
+            },
+            complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
+        })
+    };
+});
 
 
 //定时器
@@ -126,7 +188,7 @@ var hour = document.querySelector(".hour");
 var minute = document.querySelector(".minute");
 var second = document.querySelector(".second");
 // 定时函数
-var daojishi = setInterval(function() {
+var daojishi = setInterval(function () {
     var s1 = new Date("2019/12/1 00:00:00");
     var s2 = new Date();
     var s3 = s1 - s2;
@@ -142,24 +204,3 @@ var daojishi = setInterval(function() {
         second.textContent = seconds;
     }
 }, 1000)
-
-//category
-$(function() {
-    $(".category .cgli").hover(function() {
-        $(this).addClass("show").siblings().removeClass("show");
-    });
-    $(".category .cgli").mouseout(function() {
-        $(this).removeClass("show");
-    });
-
-});
-
-//跳转
-
-$(function() {
-    $(".cgli").click(function() {
-        let val = $(this).attr("value");
-        console.log(val);
-    })
-
-});
