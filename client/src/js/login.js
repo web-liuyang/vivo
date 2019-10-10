@@ -39,7 +39,7 @@ $(".tologin").click(function () {
                 alert(data.tishi);
                 if (data.tishi == "登陆成功") {
                     sessionStorage.user = JSON.stringify({
-                        username: $(".phonebox>input").val(),
+                        username: data.data[0].username,
                         nikename:data.data[0].nikename,
                         tel:data.data[0].tel,
                         email:data.data[0].email

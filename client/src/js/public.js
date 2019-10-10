@@ -1,32 +1,32 @@
-import { Z_BLOCK } from "zlib";
+import {
+    Z_BLOCK
+} from "zlib";
 
 //公共
-$(function() {
-
+$(function () {
 
     // 折叠栏
-
     //二级菜单
-    /*     $erji = $(".nav-item.box-item");
-        $erjisun = $(".nav-item.box-item ul");
-        $erji.mouseenter(function () { 
-            index = $(this).index();
-            // console.log($(this).index())
-            $erjisun[index].classList.add("block")
-        });
-        $erji.mouseleave(function () { 
-            index = $(this).index();
-            // console.log($(this).index())
-            $erjisun[index].classList.remove("block")
-        });
-     */
-
-
-
-
-
+    let $sections = $(".nav-item.box-item>section")
+    $.ajax({
+        type: "GET",  //默认get
+        url: "http://127.0.0.1:8081/shop",  //默认当前页
+        data: "data",  //格式{key:value}
+        dataType: "json",
+        beforeSend: function () {}, //请求发送前回调,常用验证
+        success: function (response) {  //请求成功回调
+            
+        },
+        error: function (e) {  //请求超时回调
+            if(e.statusText == "timeout"){
+                alert("请求超时");
+            }
+        },
+        complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
+    });
+    
     // 导航栏折叠后的折叠按钮
-    $(".unfold-btn").click(function() {
+    $(".unfold-btn").click(function () {
         $("header").toggleClass("none");
         $("main").toggleClass("none");
         $("footer").toggleClass("none");
@@ -46,8 +46,7 @@ $(function() {
 
     })
 
-
-    $(".box-item").hover(function() {
+    $(".box-item").hover(function () {
 
         $(".list-box").css({
             "display": "block"
@@ -62,7 +61,7 @@ $(function() {
             "color": "#000000"
         })
 
-    }, function() {
+    }, function () {
         $(".list-box").css({
             "display": "none"
         });
@@ -76,9 +75,6 @@ $(function() {
             "color": "white"
         });
     })
-
-
-
 
     // 判断登录状态
     if (!sessionStorage.user) {
@@ -102,6 +98,7 @@ $(function() {
             "display": "block"
         })
     }
+
 
 
 })

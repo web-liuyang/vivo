@@ -164,7 +164,6 @@ $(function() {
 $(function() {
     $(".cgli").click(function() {
         let val = $(this).attr("value");
-        console.log(val);
     })
 
 });
