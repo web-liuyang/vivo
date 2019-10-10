@@ -103,6 +103,7 @@ $(function () {
             fetch('http://127.0.0.1:8081/addshopcart', {
                 method: 'post',
                 body: JSON.stringify({
+                    classname_1:data.classname_1,
                     username: $username,
                     title: $title,
                     price: $price,
