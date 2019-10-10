@@ -108,8 +108,8 @@ $(function () {
         let $images = $(".img");
         imgStr += `
            <div class="tab-box">
-           <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
-           <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
+           <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
+           <img class="tab-box-item " src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
            <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
            <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
            </div>
@@ -120,7 +120,11 @@ $(function () {
            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
            </div>`;
         $images.html(imgStr);
-
+        //鼠标移入事件
+        $(".tab-menu-item").mouseenter(function () {
+            let $index = $(this).index();
+            $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+        })
 
         // 改变版本框
         $(".v-de").click(function () {
@@ -128,37 +132,38 @@ $(function () {
             let $vsn = $(".vsn");
             let $select = $(".v-des .select").html();
             $vsn.html($select);
-
         })
 
         // 改变颜色框
-        
-        $(".c-de").each(function(index,item){
+        $(".c-de").each(function (index, item) {
             $(item).click(function () {
                 //切换颜色
-                console.log(index)
                 $(this).addClass("select").siblings().removeClass("select");
-                let classname = this.children[0].className;
+                // let classname = this.children[0].className;
                 let imgStr = "";
                 let $images = $(".img");
                 let key = `color_${index+1}_url_`;
                 imgStr += `
                    <div class="tab-box">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'1'}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'2'}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'3'}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'4'}.png" alt="">
+                   <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data[key+'1']}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'2']}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'3']}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'4']}.png" alt="">
                    </div>
                    <div class="tab-menu">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'1'}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'2'}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'3'}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'4'}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'1']}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'2']}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'3']}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'4']}.png" alt="">
                    </div>`;
                 $images.html(imgStr);
-        })
-    
+                //鼠标移入事件
+                $(".tab-menu-item").mouseenter(function () {
+                    let $index = $(this).index();
+                    $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+                })
 
+            })
             //拼接颜色到title
             let $color = $(".color-s");
             let $select_color = $(".c-des .select").html();
@@ -192,15 +197,10 @@ $(function () {
         .then(data => {
             loaddingDetails(data)
         })
-
-
-
     // tab选项卡
-    $(".tab-menu-item").mouseover(function () {
-        let _index = $(this).index();
-        $(".tab-box-item").eq(_index).show().siblings().hide();
-        $(this).addClass("show").siblings().removeClass("show");
-    })
+
+
+
 
 
 
