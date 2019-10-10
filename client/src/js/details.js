@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-$(function() {
+$(function () {
 
 
     function loaddingDetails(data) {
@@ -65,7 +65,6 @@ $(function() {
             </div>
         </div>
         <div class="add">
-            <p>加入购物车</p>
             <div class="num">
                 <span class="reduce">-</span><span class="number">1</span><span class="plus">+</span>
             </div>
@@ -74,42 +73,59 @@ $(function() {
             <p>￥${data.price}</p>
         </div>
         <div class="js">
-            <span>加入购物车</span>
+            <span class="addshopcart">加入购物车</span>
             <span> 立即购买</span>
         </div>`;
         $mesg.html(htmlStr);
-        //判断版本为空
-        if(data.vsn_1 ==""||"null"||"NULL"){
-            $(".vsn").remove()
-        }
-    // 商品数量加减
+        // 商品数量加减
+        $(".reduce").click(function () {
+            var n = $(".number").text();
+            var num = parseInt(n) - 1;
+            if (num == 0) {
+                return;
+            }
+            $(this).next().html(num);
+        });
+        $(".plus").click(function () {
+            let n = $(".number").text();
+            let num = parseInt(n) + 1;
+            if (num == 0) {
+                return;
+            }
+            $(this).prev().html(num);
+        })
+        $(".addshopcart").click(function () {
+            let $title = $(".title-iphone").children().text();
+            let $price = $(".price").text().split("￥")[1];
+            let $number = $(".number").text();
+            let $username = JSON.parse(sessionStorage.user).username;
+            let $url = data.color_1_url_1;
+            fetch('http://127.0.0.1:8081/addshopcart', {
+                method: 'post',
+                body: JSON.stringify({
+                    username: $username,
+                    title: $title,
+                    price: $price,
+                    number: $number,
+                    url: $url
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json()).then(function (data) {
+                alert(data.tishi)
+            });
+            // console.log($url);
 
-    $(".reduce").click(function () {
-        var n = $(".number").text();
-        var num = parseInt(n) - 1;
-        if (num == 0) {
-            return;
-        }
-        $(this).next().html(num);
-    });
-
-    $(".plus").click(function () {
-
-        let n = $(".number").text();
-        let num = parseInt(n) + 1;
-        if (num == 0) {
-            return;
-        }
-        $(this).prev().html(num);
-
-    })
+        })
 
 
 
         // 拼接图片
         let imgStr = "";
         let $images = $(".img");
-        if(data.classname_1=="parts"){
+
+        if (data.classname_1 == "parts") {
             imgStr += `
             <div class="tab-box">
             <img class="tab-box-item show" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_1}.png" alt="">
@@ -123,8 +139,13 @@ $(function() {
             <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_3}.png" alt="">
             <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_4}.png" alt="">
             </div>`;
+            // console.log($(".v-title"))
             $(".v-title").remove();
-        }else{
+            //判断版本为空
+            if (data.vsn_1 == "" || "null" || "NULL") {
+                $(".vsn").remove()
+            }
+        } else {
             imgStr += `
             <div class="tab-box">
             <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
@@ -138,17 +159,18 @@ $(function() {
             <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
             <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
             </div>`;
-        }
 
+        }
         $images.html(imgStr);
+
         //鼠标移入事件
-        $(".tab-menu-item").mouseenter(function() {
+        $(".tab-menu-item").mouseenter(function () {
             let $index = $(this).index();
             $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
         })
 
         // 改变版本框
-        $(".v-de").click(function() {
+        $(".v-de").click(function () {
             $(this).addClass("select").siblings().removeClass("select");
             let $vsn = $(".vsn");
             let $select = $(".v-des .select").html();
@@ -164,7 +186,7 @@ $(function() {
                 let imgStr = "";
                 let $images = $(".img");
                 let key = `color_${index+1}_url_`;
-                if(data.classname_1=="parts"){
+                if (data.classname_1 == "parts") {
                     imgStr += `
                     <div class="tab-box">
                     <img class="tab-box-item show" src="http://127.0.0.1:8081/images/parts/${data[key+"1"]}.png" alt="">
@@ -179,7 +201,7 @@ $(function() {
                     <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"4"]}.png" alt="">
                     </div>`;
                     $(".v-title").remove();
-                }else{
+                } else {
                     imgStr += `
                     <div class="tab-box">
                     <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data[key+"1"]}.png" alt="">
@@ -194,25 +216,25 @@ $(function() {
                     <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"4"]}.png" alt="">
                     </div>`;
                 }
-        
+
                 $images.html(imgStr);
                 //鼠标移入事件
                 $(".tab-menu-item").mouseenter(function () {
                     let $index = $(this).index();
                     $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
                 })
-
-                })
                 //拼接颜色到title
-            let $color = $(".color-s");
-            let $select_color = $(".c-des .select").html();
-            $color.html($select_color);
+                let $color = $(".color-s");
+                let $select_color = $(".c-des .select").html();
+                $color.html($select_color);
+            })
+
         })
 
 
         // 清除版本为空
         let $vsn_null = $(".v-de");
-        $vsn_null.each(function(index, item) {
+        $vsn_null.each(function (index, item) {
             if (/null/.test(item.innerHTML)) {
                 $vsn_null[index].remove();
             }
@@ -220,7 +242,7 @@ $(function() {
 
         // 清除颜色为空
         let $color_null = $(".c-de");
-        $color_null.each(function(index, item) {
+        $color_null.each(function (index, item) {
             if (/null/.test(item.innerHTML)) {
                 $color_null[index].remove();
             }
@@ -236,18 +258,6 @@ $(function() {
         .then(data => {
             loaddingDetails(data)
         })
-        // tab选项卡
-
-
-
-
-    // tab选项卡
-    $(".tab-menu-item").mouseover(function() {
-        let _index = $(this).index();
-        $(".tab-box-item").eq(_index).show().siblings().hide();
-        $(this).addClass("show").siblings().removeClass("show");
-    })
-
 
 
 })
