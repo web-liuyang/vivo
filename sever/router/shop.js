@@ -49,6 +49,21 @@ router.get("/shoppingmallerji", (req, res) => {
         // 断开数据库连接
     db.end();
 })
+router.get("/details", (req, res) => {
+    // 参数结构
+    let { id} = req.query;
+    // 获取数据库
+    const db = getMysql();
+    // 连接数据库
+    db.connect();
+    // 数据库指令，结构的参数，函数输出结果
+    db.query("SELECT * FROM shop WHERE id=?", [id], (err, sqlRes) => {
+            // 把结果返回前端
+            res.send(sqlRes)
+        })
+        // 断开数据库连接
+    db.end();
+})
 
 
 

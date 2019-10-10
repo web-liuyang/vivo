@@ -11,22 +11,26 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-$(function() {
+$(function () {
 
     // 商品数量加减
 
-    $(".reduce").click(function() {
+    $(".reduce").click(function () {
         var n = $(".number").text();
         var num = parseInt(n) - 1;
-        if (num == 0) { return; }
+        if (num == 0) {
+            return;
+        }
         $(this).next().html(num);
     });
 
-    $(".plus").click(function() {
+    $(".plus").click(function () {
 
         let n = $(".number").text();
         let num = parseInt(n) + 1;
-        if (num == 0) { return; }
+        if (num == 0) {
+            return;
+        }
         $(this).prev().html(num);
 
     })
@@ -72,12 +76,12 @@ $(function() {
             颜色
             </p>
             <div class="c-des">
-                <p class="c-de select"><span class="black"></span>${data.color_1_name}</p>
-                <p class="c-de"><span class="purple"></span>${data.color_2_name}</p>
-                <p class="c-de"><span class="purple"></span>${data.color_3_name}</p>
-                <p class="c-de"><span class="purple"></span>${data.color_4_name}</p>
-                <p class="c-de"><span class="purple"></span>${data.color_5_name}</p>
-                <p class="c-de"><span class="purple"></span>${data.color_6_name}</p>
+                <p class="c-de select"><span class="${data.color_1}"></span>${data.color_1_name}</p>
+                <p class="c-de"><span class="${data.color_2}"></span>${data.color_2_name}</p>
+                <p class="c-de"><span class="${data.color_3}"></span>${data.color_3_name}</p>
+                <p class="c-de"><span class="${data.color_4}"></span>${data.color_4_name}</p>
+                <p class="c-de"><span class="${data.color_5}"></span>${data.color_5_name}</p>
+                <p class="c-de"><span class="${data.color_6}"></span>${data.color_6_name}</p>
                
             </div>
         </div>
@@ -102,7 +106,6 @@ $(function() {
         // 拼接图片
         let imgStr = "";
         let $images = $(".img");
-        console.log(data)
         imgStr += `
            <div class="tab-box">
            <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
@@ -120,29 +123,52 @@ $(function() {
 
 
         // 改变版本框
-        $(".v-de").click(function() {
+        $(".v-de").click(function () {
             $(this).addClass("select").siblings().removeClass("select");
             let $vsn = $(".vsn");
             let $select = $(".v-des .select").html();
-            console.log($select)
-            $vsn.html($select)
-
+            $vsn.html($select);
 
         })
 
         // 改变颜色框
-        $(".c-de").click(function() {
-            $(this).addClass("select").siblings().removeClass("select");
+        
+        $(".c-de").each(function(index,item){
+            $(item).click(function () {
+                //切换颜色
+                console.log(index)
+                $(this).addClass("select").siblings().removeClass("select");
+                let classname = this.children[0].className;
+                let imgStr = "";
+                let $images = $(".img");
+                let key = `color_${index+1}_url_`;
+                imgStr += `
+                   <div class="tab-box">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'1'}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'2'}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'3'}.png" alt="">
+                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'4'}.png" alt="">
+                   </div>
+                   <div class="tab-menu">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'1'}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'2'}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'3'}.png" alt="">
+                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'4'}.png" alt="">
+                   </div>`;
+                $images.html(imgStr);
+        })
+    
+
+            //拼接颜色到title
             let $color = $(".color-s");
             let $select_color = $(".c-des .select").html();
-            console.log($select_color)
             $color.html($select_color);
         })
 
 
         // 清除版本为空
         let $vsn_null = $(".v-de");
-        $vsn_null.each(function(index, item) {
+        $vsn_null.each(function (index, item) {
             if (/null/.test(item.innerHTML)) {
                 $vsn_null[index].remove();
             }
@@ -150,7 +176,7 @@ $(function() {
 
         // 清除颜色为空
         let $color_null = $(".c-de");
-        $color_null.each(function(index, item) {
+        $color_null.each(function (index, item) {
             if (/null/.test(item.innerHTML)) {
                 $color_null[index].remove();
             }
@@ -158,9 +184,15 @@ $(function() {
 
     }
 
+<<<<<<< Updated upstream
 
 
     fetch("http://127.0.0.1:8081/details?id=2", {
+=======
+    let id = location.search.split("?");
+    id = id[1].split("=")[1];
+    fetch(`http://127.0.0.1:8081/details?id=${id}`, {
+>>>>>>> Stashed changes
             method: "GET"
         }).then(request => request.json())
         .then(data => {
@@ -170,7 +202,7 @@ $(function() {
 
 
     // tab选项卡
-    $(".tab-menu-item").mouseover(function() {
+    $(".tab-menu-item").mouseover(function () {
         let _index = $(this).index();
         $(".tab-box-item").eq(_index).show().siblings().hide();
         $(this).addClass("show").siblings().removeClass("show");

@@ -1,7 +1,6 @@
 //函数封装
 function loaddingerji(claaname_2,index,classname_1='iphone',){
     let $uls = $(".nav-item.box-item ul");
-    debugger
     $.ajax({
         type: "GET", //默认get
         url: `http://127.0.0.1:8081/homeerji?classname_2=${claaname_2}`, //默认当前页
@@ -31,7 +30,9 @@ function loaddingerji(claaname_2,index,classname_1='iphone',){
         complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
     });
 }
-
+function img(){
+    
+}
 module.exports ={
     loaddingerji
 }
