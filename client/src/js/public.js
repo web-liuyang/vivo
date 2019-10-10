@@ -5,7 +5,7 @@ import {
     loaddingerji
 } from '../js/fn.js';
 //公共
-$(function () {
+$(function() {
 
     // 折叠栏
     //二级菜单
@@ -16,10 +16,10 @@ $(function () {
     loaddingerji('Z', 4)
     loaddingerji('Y', 5)
     loaddingerji('U', 6)
-    loaddingerji('music', 7,'parts')
+    loaddingerji('music', 7, 'parts')
 
     // 导航栏折叠后的折叠按钮
-    $(".unfold-btn").click(function () {
+    $(".unfold-btn").click(function() {
         $("header").toggleClass("none");
         $("main").toggleClass("none");
         $("footer").toggleClass("none");
@@ -39,7 +39,7 @@ $(function () {
 
     })
 
-    $(".box-item").hover(function () {
+    $(".box-item").hover(function() {
 
         $(".list-box").css({
             "display": "block"
@@ -54,7 +54,7 @@ $(function () {
             "color": "#000000"
         })
 
-    }, function () {
+    }, function() {
         $(".list-box").css({
             "display": "none"
         });
@@ -93,5 +93,12 @@ $(function () {
     }
 
 
+    // 注销登录
+    $(".log-out").click(function() {
+        console.log($(".logout"))
+        sessionStorage.removeItem("user");
+        confirm("您确定退出登录吗？")
+        location.href = "http://127.0.0.1:8090/static/pages/login.html";
+    })
 
 })
