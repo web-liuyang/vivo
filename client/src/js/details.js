@@ -184,15 +184,9 @@ $(function () {
 
     }
 
-<<<<<<< Updated upstream
-
-
-    fetch("http://127.0.0.1:8081/details?id=2", {
-=======
     let id = location.search.split("?");
     id = id[1].split("=")[1];
     fetch(`http://127.0.0.1:8081/details?id=${id}`, {
->>>>>>> Stashed changes
             method: "GET"
         }).then(request => request.json())
         .then(data => {

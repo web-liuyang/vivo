@@ -6,7 +6,7 @@ import {
 } from '../js/fn.js';
 //公共
 
-// export function public2() { // 折叠栏??
+
 //二级菜单
 loaddingerji('IQOO', 0)
 loaddingerji('NEX', 1)
