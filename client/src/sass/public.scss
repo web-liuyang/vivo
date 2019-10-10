@@ -288,6 +288,11 @@ $font: 12px;
 footer {
     margin: 0 auto;
     width: 80%;
+    .btn-link {
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
     .foot-wrap {
         margin: 80px auto;
         display: grid;
