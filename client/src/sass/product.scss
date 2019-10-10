@@ -17,19 +17,18 @@ main {
         font-size: 13px;
     }
     .menu {
-        padding: 0 36px;
         font-size: 14px;
         color: #666;
         background-color: #fff;
         overflow: hidden;
         margin-bottom: 38px;
+        position: relative;
         .menutop {
+            padding: 7px 36px 1px;
             margin: 0 -18px;
-            padding: 7px 0 1px;
             font-size: 1px;
             text-align: justify;
             border-bottom: 1px solid #ddd;
-            position: relative;
             li {
                 display: inline-block;
                 margin: 0 18px;
@@ -48,8 +47,10 @@ main {
                 color: #000;
             }
         }
-        .menucont {
-            padding: 2px 0;
+        .mconts {
+            display: block;
+            position: relative;
+            padding: 7px 36px 1px;
             li {
                 padding: 11px 0 5px 0;
                 display: inline-block;
@@ -68,26 +69,25 @@ main {
                 color: #000;
             }
         }
+        .hide {
+            display: none;
+        }
     }
     .product {
         width: 100%;
         position: relative;
         .productlist {
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4, 25%);
-            justify-content: space-between;
+            display: none;
         }
         .partslist {
             width: 100%;
+            display: none;
+        }
+        .show {
             display: grid;
             grid-template-columns: repeat(4, 25%);
             justify-content: space-between;
-        }
-        .hide {
-            position: absolute;
-            top: 0;
-            opacity: 0;
         }
         .box {
             box-sizing: content-box;
@@ -142,6 +142,9 @@ main {
                 box-shadow: $box-shadow;
                 cursor: pointer;
             }
+        }
+        .sel {
+            display: none;
         }
     }
 }
