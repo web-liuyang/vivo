@@ -65,7 +65,6 @@ userData(data);
 // 账号中心注销
 
 $(".zxzh").click(function() {
-
     sessionStorage.removeItem("user");
     confirm("您确定退出登录吗？")
     location.href = "login.html";

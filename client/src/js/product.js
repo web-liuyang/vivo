@@ -36,7 +36,7 @@ function loaddingProduct(data) {
 
     data.forEach((obj, index) => {
         htmlStr += `<li class="box ${obj.classname_2} "  value="${obj.classname_2}" id=${obj.id}>
-            <img src="http://127.0.0.1:8081/images/iphone/${obj.color_2_url_1}.png">
+            <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
             <div class="info">
                 <p class="title">${obj.title}+ ${obj.vsn_1}&nbsp;${obj.color_2_name}</p>
                 <p class="dec">${obj.describe}</p>
@@ -50,6 +50,7 @@ function loaddingProduct(data) {
 fetch("http://127.0.0.1:8081/product?classname_1=iphone")
     .then(response => response.json())
     .then(res => {
+        console.log(res)
         loaddingProduct(res);
         $(".box").click(function() {
             let id = this.id;

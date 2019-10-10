@@ -13,27 +13,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 $(function() {
 
-    // 商品数量加减
-
-    $(".reduce").click(function() {
-        var n = $(".number").text();
-        var num = parseInt(n) - 1;
-        if (num == 0) {
-            return;
-        }
-        $(this).next().html(num);
-    });
-
-    $(".plus").click(function() {
-
-        let n = $(".number").text();
-        let num = parseInt(n) + 1;
-        if (num == 0) {
-            return;
-        }
-        $(this).prev().html(num);
-
-    })
 
     function loaddingDetails(data) {
         let htmlStr = "";
@@ -49,7 +28,7 @@ $(function() {
                 <p class="price">￥${data.price}</p>
             </section>
             <section>
-                <p class="desc">积分:购买即送1898积分</p>
+                <p class="desc">积分:购买即送${data.price}积分</p>
                 <p class="desc">下单赠券:购机订单完成后即赠配件券</p>
             </section>
         </div>
@@ -88,7 +67,7 @@ $(function() {
         <div class="add">
             <p>加入购物车</p>
             <div class="num">
-                <span class="reduce">-</span><span class="number">0</span><span class="plus">+</span>
+                <span class="reduce">-</span><span class="number">1</span><span class="plus">+</span>
             </div>
         </div>
         <div class="total">
@@ -99,26 +78,68 @@ $(function() {
             <span> 立即购买</span>
         </div>`;
         $mesg.html(htmlStr);
+        //判断版本为空
+        if(data.vsn_1 ==""||"null"||"NULL"){
+            $(".vsn").remove()
+        }
+    // 商品数量加减
 
+    $(".reduce").click(function () {
+        var n = $(".number").text();
+        var num = parseInt(n) - 1;
+        if (num == 0) {
+            return;
+        }
+        $(this).next().html(num);
+    });
+
+    $(".plus").click(function () {
+
+        let n = $(".number").text();
+        let num = parseInt(n) + 1;
+        if (num == 0) {
+            return;
+        }
+        $(this).prev().html(num);
+
+    })
 
 
 
         // 拼接图片
         let imgStr = "";
         let $images = $(".img");
-        imgStr += `
-           <div class="tab-box">
-           <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
-           <img class="tab-box-item " src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
-           <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
-           <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
-           </div>
-           <div class="tab-menu">
-           <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
-           <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
-           <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
-           <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
-           </div>`;
+        if(data.classname_1=="parts"){
+            imgStr += `
+            <div class="tab-box">
+            <img class="tab-box-item show" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_1}.png" alt="">
+            <img class="tab-box-item " src="http://127.0.0.1:8081/images/parts/${data.color_1_url_2}.png" alt="">
+            <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_3}.png" alt="">
+            <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_4}.png" alt="">
+            </div>
+            <div class="tab-menu">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_1}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_2}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_3}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data.color_1_url_4}.png" alt="">
+            </div>`;
+            $(".v-title").remove();
+        }else{
+            imgStr += `
+            <div class="tab-box">
+            <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
+            <img class="tab-box-item " src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
+            <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
+            <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
+            </div>
+            <div class="tab-menu">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_1}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_2}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_3}.png" alt="">
+            <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data.color_1_url_4}.png" alt="">
+            </div>`;
+        }
+
         $images.html(imgStr);
         //鼠标移入事件
         $(".tab-menu-item").mouseenter(function() {
@@ -135,33 +156,51 @@ $(function() {
         })
 
         // 改变颜色框
-        $(".c-de").each(function(index, item) {
-            $(item).click(function() {
-                    //切换颜色
-                    $(this).addClass("select").siblings().removeClass("select");
-                    // let classname = this.children[0].className;
-                    let imgStr = "";
-                    let $images = $(".img");
-                    let key = `color_${index+1}_url_`;
+        $(".c-de").each(function (index, item) {
+            $(item).click(function () {
+                //切换颜色
+                $(this).addClass("select").siblings().removeClass("select");
+                // let classname = this.children[0].className;
+                let imgStr = "";
+                let $images = $(".img");
+                let key = `color_${index+1}_url_`;
+                if(data.classname_1=="parts"){
                     imgStr += `
-                   <div class="tab-box">
-                   <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data[key+'1']}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'2']}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'3']}.png" alt="">
-                   <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'4']}.png" alt="">
-                   </div>
-                   <div class="tab-menu">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'1']}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'2']}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'3']}.png" alt="">
-                   <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+'4']}.png" alt="">
-                   </div>`;
-                    $images.html(imgStr);
-                    //鼠标移入事件
-                    $(".tab-menu-item").mouseenter(function() {
-                        let $index = $(this).index();
-                        $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
-                    })
+                    <div class="tab-box">
+                    <img class="tab-box-item show" src="http://127.0.0.1:8081/images/parts/${data[key+"1"]}.png" alt="">
+                    <img class="tab-box-item " src="http://127.0.0.1:8081/images/parts/${data[key+"2"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/ ${data[key+"3"]} .png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/ ${data[key+"4"]} .png" alt="">
+                    </div>
+                    <div class="tab-menu">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"1"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"2"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"3"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"4"]}.png" alt="">
+                    </div>`;
+                    $(".v-title").remove();
+                }else{
+                    imgStr += `
+                    <div class="tab-box">
+                    <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data[key+"1"]}.png" alt="">
+                    <img class="tab-box-item " src="http://127.0.0.1:8081/images/iphone/    ${data[key+"2"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/     ${data[key+"3"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/     ${data[key+"4"]}.png" alt="">
+                    </div>
+                    <div class="tab-menu">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"1"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"2"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"3"]}.png" alt="">
+                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"4"]}.png" alt="">
+                    </div>`;
+                }
+        
+                $images.html(imgStr);
+                //鼠标移入事件
+                $(".tab-menu-item").mouseenter(function () {
+                    let $index = $(this).index();
+                    $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+                })
 
                 })
                 //拼接颜色到title
