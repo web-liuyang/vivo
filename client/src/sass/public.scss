@@ -2,28 +2,26 @@
 @font-face {
     font-family: 'iconfont';
     /* project id 1293678 */
-    src: url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.eot');
-    src: url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.woff2') format('woff2'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.woff') format('woff'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.ttf') format('truetype'), url('//at.alicdn.com/t/font_1293678_a2h1on3gs2v.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1293678_of17awp7kam.eot');
+    src: url('//at.alicdn.com/t/font_1293678_of17awp7kam.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1293678_of17awp7kam.woff2') format('woff2'), url('//at.alicdn.com/t/font_1293678_of17awp7kam.woff') format('woff'), url('//at.alicdn.com/t/font_1293678_of17awp7kam.ttf') format('truetype'), url('//at.alicdn.com/t/font_1293678_of17awp7kam.svg#iconfont') format('svg');
 }
 
 body,
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     height: 100%;
-
 }
 
 $bg:rgb(51,
-    51,
-    51);
+51,
+51);
 $c: rgb(204,
-    204,
-    204);
+204,
+204);
 $themeColor:rgb(255,
-    255,
-    255);
+255,
+255);
 $font: 12px;
-
 .block {
     display: block !important;
 }
@@ -43,66 +41,53 @@ $font: 12px;
     width: 100%;
     padding: 0 !important;
     z-index: 999;
-
     .respond {
         background: $bg;
-
         .search-bar {
             width: 300px;
             height: 40px;
             border-radius: 5px;
             display: none;
         }
-
         #res-nav {
             margin-left: 30px;
-
             .nav-left li {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-
                 .symbol {
                     font-size: 36px;
                     padding-right: 20px;
                 }
-
                 .login-btn {
                     padding-right: 20px;
                 }
-
                 span {
                     color: $c;
                     font-size: 22px;
                     line-height: 60px;
-
                     a {
                         padding: 0;
                     }
                 }
             }
         }
-
         button {
             margin-left: 10px;
         }
-
         .shop-pack {
             font-family: "iconfont" !important;
             font-size: 32px;
             color: $c;
             font-style: normal !important;
         }
-
         .logobar {
             color: $c;
             font-size: 36px;
-
             &:hover {
                 color: rgb(65, 95, 255);
             }
         }
-
         .none {
             display: none !important;
         }
@@ -113,13 +98,10 @@ $font: 12px;
 .padding-none {
     padding: 0 !important;
     background: $bg;
-
     .top-list {
         margin-left: 50px;
-
         li {
             padding-right: 22px;
-
             a {
                 font-size: $font;
                 padding: 0;
@@ -127,23 +109,18 @@ $font: 12px;
             }
         }
     }
-
     .personal {
         margin-right: 30px;
-
         li {
             padding-left: 30px;
-
             a {
                 font-size: $font;
                 color: $c;
             }
         }
     }
-
     .personal-list {
         margin-right: 30px !important;
-
         #dropdownMenuLink {
             background: $bg;
             color: $c;
@@ -153,11 +130,9 @@ $font: 12px;
     }
 }
 
-
 // 第二排导航栏和图片
 .top-nav {
     position: relative;
-
     /*     @media screen and (max-width: 768px) {
         .app-bar {
             display: none !important;
@@ -170,15 +145,14 @@ $font: 12px;
         top: 0;
         background-color: transparent;
         z-index: 4444 !important;
-
         .container {
             >a {
                 color: #fff;
-                &:hover{
-                    color:blue !important;
+                font-size: 32px;
+                &:hover {
+                    color: blue !important;
                 }
             }
-
             .nav-flex {
                 width: 100%;
                 display: flex;
@@ -188,21 +162,21 @@ $font: 12px;
                 li {
                     width: calc(100% / 11);
                     line-height: 60px;
-                    height: 100%;    
-                    text-align: center;  
-                    &:hover ul{
+                    height: 100%;
+                    text-align: center;
+                    &:hover ul {
                         display: block;
-                        .section span{
-                            color:black !important;
+                        .section span {
+                            color: black !important;
                         }
                     }
-                    &:hover>section span{
+                    &:hover>section span {
                         color: black !important;
                     }
                     a {
                         color: #fff;
-                        &:hover{
-                            color:rgb(86,113,254) !important;
+                        &:hover {
+                            color: rgb(86, 113, 254) !important;
                             text-decoration: none;
                         }
                     }
@@ -218,7 +192,6 @@ $font: 12px;
                         z-index: -1 !important;
                         display: none;
                         text-align: center;
-
                         li {
                             cursor: pointer;
                             display: inline-block;
@@ -228,34 +201,27 @@ $font: 12px;
                             margin: 0 10px;
                             img {
                                 width: 100%;
-                            }    
-                            p{
+                            }
+                            p {
                                 text-overflow: ellipsis;
                                 overflow: hidden;
                                 white-space: nowrap;
                             }
                         }
-
                     }
                     section {
                         // color: $themeColor;
                         color: #fff;
                         font-size: 18px;
                         transition: all .5s linear;
-
                         span {
                             cursor: pointer;
-                            &:hover{
-                                color:rgb(86,113,254) !important;
+                            &:hover {
+                                color: rgb(86, 113, 254) !important;
                             }
                         }
-
-
                     }
-
-                   
                 }
-
                 &:last-child a .iconfont {
                     font-family: "iconfont" !important;
                     font-size: 16px;
@@ -264,28 +230,24 @@ $font: 12px;
             }
         }
     }
-
     .img-bg {
         overflow: hidden;
         position: relative;
-
         .desc-1 {
             position: absolute;
             top: 20%;
             left: -40%;
             padding: 0;
-
             p {
                 margin: 30px auto;
-                span{
+                span {
                     cursor: pointer;
-                    &:hover{
-                    color:blue;
-                }
+                    &:hover {
+                        color: blue;
+                    }
                 }
             }
         }
-
         /*         @media screen and (max-width: 1440px) {
             .img {
                 height: 600px !important;
@@ -297,7 +259,6 @@ $font: 12px;
             }
         } */
     }
-
     .img {
         height: 100%;
         position: relative;
@@ -308,18 +269,14 @@ $font: 12px;
         -o-transform: translateX(-50%);
         transform: translateX(-50%);
     }
-
     .carousel-item {
         position: relative;
-
         .carousel-caption {
             position: absolute;
             top: 10%;
-
             p {
                 margin: 30px auto;
             }
-
             &:last-child a {
                 color: white;
             }
@@ -331,31 +288,25 @@ $font: 12px;
 footer {
     margin: 0 auto;
     width: 80%;
-
     .foot-wrap {
         margin: 80px auto;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-
         section {
             .title {
                 text-align: left;
                 margin-bottom: 50px;
                 font-weight: bold;
             }
-
             ul {
                 margin: 0;
                 padding: 0;
-
                 li {
                     list-style: none;
                     margin-bottom: 10px;
-
                     a {
                         color: #8a8787;
                         text-decoration: none;
-
                         &:hover {
                             color: blue;
                         }
@@ -363,28 +314,23 @@ footer {
                 }
             }
         }
-
         .online {
             grid-column: 6/8;
             text-align: center;
-
             .online-title {
                 font-size: 22px;
                 color: rgb(68, 67, 67);
                 margin-bottom: 50px;
             }
-
             .tel {
                 font-size: 22px;
                 color: blue;
             }
-
             .tel-des {
                 margin-bottom: 40px;
             }
         }
     }
-
     .foot-des {
         border-top: 1px solid rgb(150, 149, 149);
         margin-top: 40px;
@@ -392,11 +338,9 @@ footer {
         font-size: 13px;
         padding: 40px 0 40px 0;
     }
-
     #accordion {
         display: none;
     }
-
     /* 
        @media screen and(max-width:768px) {
         #accordion {
@@ -414,19 +358,15 @@ footer {
         text-decoration: none;
         font-size: 22px;
     }
-
     .card-body {
         padding: 0 !important;
-
         .lis-symbol {
             padding: 0 !important;
-
             li {
                 width: 100%;
                 list-style: none;
                 line-height: 60px;
                 padding: 0 !important;
-
                 span {
                     margin-left: 60px;
                     font-size: 22px;
@@ -434,5 +374,19 @@ footer {
                 }
             }
         }
+    }
+}
+
+.to-top {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    .iconfont {
+        font-family: "iconfont";
+        font-size: 64px;
+        /*   color: black;
+        background: grey; */
     }
 }

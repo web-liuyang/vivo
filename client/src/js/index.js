@@ -28,24 +28,8 @@ $(document).scroll(function() {
 
 })
 
-// 回到顶部
-$(document).scroll(function() {
-    let offset = $(document).scrollTop();
-    if (offset > 600) {
-        $(".to-top").css({
-            "display": "block"
-        })
-    }
-    if (offset < 600) {
-        $(".to-top").css({
-            "display": "none"
-        })
-    }
 
-})
-$(".to-top").click(function() {
-    $("html,body").animate({ scrollTop: 0 }, 1000)
-});
+
 
 
 

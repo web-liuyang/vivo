@@ -23,6 +23,7 @@ function userData(data) {
     <div class="top">
     <img src="http://127.0.0.1:8081/images/liuyang/logo.png">
     <h4>账号中心</h4>
+    <p class="goback"><a href="javascript:history.go(-1)">返回上一页面</a></p>
     <p class="zxzh"><span>${data.nikename},</span>&nbsp;&nbsp退出账号</p>
 </div>
 
