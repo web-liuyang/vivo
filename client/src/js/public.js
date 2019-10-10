@@ -32,11 +32,9 @@ $(function() {
             $logobar.addClass("none");
             $(".search-bar").addClass("block");
             $("body,html").css({
-                "background": "#ffffff"
+                "background": "#ffffff" 
             })
         }
-
-
     })
 
     $(".box-item").hover(function() {

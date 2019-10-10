@@ -7,7 +7,9 @@
      src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot');
      src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff') format('woff'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.svg#iconfont') format('svg');
  }
- 
+ body{
+     min-width: 1350px;
+ }
  .iconfont {
      font-family: "iconfont" !important;
      font-size: 32px;
@@ -82,94 +84,6 @@
                      }
                      .show {
                          background: white;
-                     }
-                 }
-                 .category-box {
-                     position: absolute;
-                     top: 0;
-                     left: 90px;
-                     border-left: 14px solid transparent;
-                     background-clip: padding-box;
-                     .cgboxdetail {
-                         background: #fff;
-                         display: inline-block;
-                         vertical-align: top;
-                         padding: 8px 50px 0 44px;
-                         width: 750px;
-                         height: 482px;
-                         white-space: normal;
-                         //  .cgsub {
-                         //      margin-bottom: 9px;
-                         //      padding-bottom: 6px;
-                         //      font-size: 1px;
-                         //      border-bottom: 1px solid #e5e5e5;
-                         //      li {
-                         //          display: inline-block;
-                         //          vertical-align: top;
-                         //          margin-bottom: 12px;
-                         //          width: 156px;
-                         //          height: 50px;
-                         //          border-radius: 6px;
-                         //          background: pink;
-                         //          position: relative;
-                         //          overflow: hidden;
-                         //          p {
-                         //              line-height: 50px;
-                         //              text-align: center;
-                         //          }
-                         //          img {
-                         //              width: 35%;
-                         //              position: absolute;
-                         //              top: 15%;
-                         //              right: -5px;
-                         //          }
-                         //      }
-                         //  }
-                         .cgproduct {
-                             margin-bottom: -40px;
-                             padding: 39px;
-                             width: 690px;
-                             height: 400px;
-                             overflow: hidden;
-                             font-size: 1px;
-                             display: grid;
-                             grid-template-columns: repeat(3, 33.33%);
-                             justify-content: space-between;
-                             .cgall {
-                                 width: 690px;
-                                 grid-column: 1/4;
-                                 padding-bottom: 20px;
-                                 position: relative;
-                                 span {
-                                     position: absolute;
-                                     top: 0;
-                                     right: 180px;
-                                 }
-                             }
-                             li {
-                                 display: inline-block;
-                                 vertical-align: top;
-                                 margin-bottom: 20px;
-                                 width: 222px;
-                                 font-size: 0;
-                                 img {
-                                     vertical-align: middle;
-                                     width: 46px;
-                                     height: 46px;
-                                 }
-                                 span {
-                                     display: inline-block;
-                                     vertical-align: middle;
-                                     margin-left: 8px;
-                                     max-width: 168px;
-                                     color: #252525;
-                                     font-size: 14px;
-                                     white-space: nowrap;
-                                     overflow: hidden;
-                                     text-overflow: ellipsis;
-                                 }
-                             }
-                         }
                      }
                  }
              }

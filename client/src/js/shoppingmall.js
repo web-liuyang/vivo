@@ -118,29 +118,7 @@ fetch("http://127.0.0.1:8081/mountings?classname_3=jingpinparts")
     })
 
 //菜单
-function loaddingCategory(data) {
-    let htmlStr = "";
-    let parent = $(".category-box .cgproduct");
-    let val = $(".cgli").attr("value");
-    data.forEach((obj, index) => {
-        htmlStr += `
-        <li class="item" id="${obj.id} value="${obj.classname_1}">
-        <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
-          <span>${obj.title}</span>
-    </li>`
-    })
 
-    htmlStr = `
-    <p class="cgall">${val}<span>全部${val}></span></p>
-    ${htmlStr}`
-    parent.html(htmlStr);
-}
-
-fetch("http://127.0.0.1:8081/category?classname_1=iphone")
-    .then(response => response.json())
-    .then(res => {
-        loaddingCategory(res);
-    })
 
 
 //定时器
