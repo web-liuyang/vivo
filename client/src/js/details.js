@@ -11,11 +11,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-$(function () {
+$(function() {
 
     // 商品数量加减
 
-    $(".reduce").click(function () {
+    $(".reduce").click(function() {
         var n = $(".number").text();
         var num = parseInt(n) - 1;
         if (num == 0) {
@@ -24,7 +24,7 @@ $(function () {
         $(this).next().html(num);
     });
 
-    $(".plus").click(function () {
+    $(".plus").click(function() {
 
         let n = $(".number").text();
         let num = parseInt(n) + 1;
@@ -123,7 +123,7 @@ $(function () {
 
 
         // 改变版本框
-        $(".v-de").click(function () {
+        $(".v-de").click(function() {
             $(this).addClass("select").siblings().removeClass("select");
             let $vsn = $(".vsn");
             let $select = $(".v-des .select").html();
@@ -132,9 +132,9 @@ $(function () {
         })
 
         // 改变颜色框
-        
-        $(".c-de").each(function(index,item){
-            $(item).click(function () {
+
+        $(".c-de").each(function(index, item) {
+            $(item).click(function() {
                 //切换颜色
                 console.log(index)
                 $(this).addClass("select").siblings().removeClass("select");
@@ -156,8 +156,8 @@ $(function () {
                    <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key]+'4'}.png" alt="">
                    </div>`;
                 $images.html(imgStr);
-        })
-    
+            })
+
 
             //拼接颜色到title
             let $color = $(".color-s");
@@ -168,7 +168,7 @@ $(function () {
 
         // 清除版本为空
         let $vsn_null = $(".v-de");
-        $vsn_null.each(function (index, item) {
+        $vsn_null.each(function(index, item) {
             if (/null/.test(item.innerHTML)) {
                 $vsn_null[index].remove();
             }
@@ -176,7 +176,7 @@ $(function () {
 
         // 清除颜色为空
         let $color_null = $(".c-de");
-        $color_null.each(function (index, item) {
+        $color_null.each(function(index, item) {
             if (/null/.test(item.innerHTML)) {
                 $color_null[index].remove();
             }
@@ -196,7 +196,7 @@ $(function () {
 
 
     // tab选项卡
-    $(".tab-menu-item").mouseover(function () {
+    $(".tab-menu-item").mouseover(function() {
         let _index = $(this).index();
         $(".tab-box-item").eq(_index).show().siblings().hide();
         $(this).addClass("show").siblings().removeClass("show");

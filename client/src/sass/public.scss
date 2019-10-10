@@ -224,8 +224,8 @@ $font: 12px;
                 }
                 &:last-child a .iconfont {
                     font-family: "iconfont" !important;
-                    font-size: 16px;
-                    color: $c;
+                    font-size: 24px;
+                    color: black;
                 }
             }
         }
@@ -388,5 +388,11 @@ footer {
         font-size: 64px;
         /*   color: black;
         background: grey; */
+    }
+}
+
+.list-ll {
+    a {
+        font-size: 18px !important;
     }
 }

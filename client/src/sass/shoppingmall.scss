@@ -7,9 +7,11 @@
      src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot');
      src: url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.woff') format('woff'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1286665_8wbnp2pxygd.svg#iconfont') format('svg');
  }
- body{
+ 
+ body {
      min-width: 1350px;
  }
+ 
  .iconfont {
      font-family: "iconfont" !important;
      font-size: 32px;
@@ -65,39 +67,39 @@
                      .cgli {
                          writing-mode: horizontal-tb;
                          width: 100%;
-                         &:hover{
+                         &:hover {
                              background: white;
                          }
-                         &:hover ul{
+                         &:hover ul {
                              display: block;
                          }
-                         ul{
-                            position: absolute;
-                            top: 0;
-                            left: 100%;
-                            width: 750px;
-                            height: 100%;
-                            background: white;
-                            display: none;
-                            padding: 20px;
-                            li:first-child{
-                                width: 100%;
-                                height: 70px;
-                                line-height: 70px;
-                                text-indent: 1rem;
-                                // font-weight: bold;
-                            }
-                            li{
-                                width: 33%;
-                                display: inline-block;
-                                cursor: pointer;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-                                white-space: nowrap;
-                                img{
-                                    width: 70px;
-                                }
-                            }
+                         ul {
+                             position: absolute;
+                             top: 0;
+                             left: 100%;
+                             width: 750px;
+                             height: 100%;
+                             background: white;
+                             display: none;
+                             padding: 20px;
+                             li:first-child {
+                                 width: 100%;
+                                 height: 70px;
+                                 line-height: 70px;
+                                 text-indent: 1rem;
+                                 // font-weight: bold;
+                             }
+                             li {
+                                 width: 33%;
+                                 display: inline-block;
+                                 cursor: pointer;
+                                 text-overflow: ellipsis;
+                                 overflow: hidden;
+                                 white-space: nowrap;
+                                 img {
+                                     width: 70px;
+                                 }
+                             }
                          }
                          a {
                              display: block;

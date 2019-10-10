@@ -58,16 +58,16 @@
     
     // main
     .goods-details {
-        width: 60%;
+        width: 70%;
         margin: 110px auto;
         .img {
-            width: 50%;
+            width: 35%;
             .tab-box {
                 margin: 0 auto;
-                width: 70%;
+                width: 460px;
                 .tab-box-item {
                     text-align: center;
-                    width: 100%;
+                    width: 80%;
                     &:not(:first-child) {
                         display: none;
                     }
@@ -79,7 +79,7 @@
                 display: flex;
                 justify-content: space-around;
                 .tab-menu-item {
-                    width: 25%;
+                    width: 100px;
                     padding: 0;
                     margin: 0;
                 }
@@ -213,5 +213,17 @@
         a {
             font-size: 32px;
             color: black;
+        }
+    }
+    
+    .box-item {
+        .orangin-name {
+            color: black !important;
+        }
+    }
+    
+    .list-ll {
+        a {
+            color: black !important;
         }
     }

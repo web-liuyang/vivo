@@ -145,3 +145,28 @@ main {
         }
     }
 }
+
+//  导航栏样式
+.app-bar {
+    background: transparent !important;
+    .nav-flex>li {
+        line-height: 60px !important;
+    }
+}
+
+.box-item {
+    .orangin-name {
+        color: black !important;
+    }
+}
+
+.list-ll {
+    a {
+        color: black !important;
+        font-size: 18px !important;
+    }
+}
+
+.navbar-brand {
+    color: black !important;
+}
