@@ -19,6 +19,23 @@ router.get("/", (req, res) => {
         // 断开数据库连接
     db.end();
 })
+router.get("/homeerji", (req, res) => {
+    // 参数结构
+    let { classname_2} = req.query;
+    // 获取数据库
+    const db = getMysql();
+    // 连接数据库
+    db.connect();
+    // 数据库指令，结构的参数，函数输出结果
+    db.query("SELECT * FROM shop WHERE classname_2=?", [classname_2], (err, sqlRes) => {
+            // 把结果返回前端
+            res.send(sqlRes)
+        })
+        // 断开数据库连接
+    db.end();
+})
+
+
 router.get("/Hotpart", (req, res) => {
     // 参数结构
     let { classname_3 } = req.query;
