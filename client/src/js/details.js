@@ -168,9 +168,9 @@ $(function() {
                     imgStr += `
                     <div class="tab-box">
                     <img class="tab-box-item show" src="http://127.0.0.1:8081/images/parts/${data[key+"1"]}.png" alt="">
-                    <img class="tab-box-item " src="http://127.0.0.1:8081/images/parts/${data[key+"2"]}.png" alt="">
-                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/ ${data[key+"3"]} .png" alt="">
-                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/ ${data[key+"4"]} .png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/${data[key+"2"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/${data[key+"3"]} .png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/parts/${data[key+"4"]} .png" alt="">
                     </div>
                     <div class="tab-menu">
                     <img class="tab-menu-item" src="http://127.0.0.1:8081/images/parts/${data[key+"1"]}.png" alt="">
@@ -183,9 +183,9 @@ $(function() {
                     imgStr += `
                     <div class="tab-box">
                     <img class="tab-box-item show" src="http://127.0.0.1:8081/images/iphone/${data[key+"1"]}.png" alt="">
-                    <img class="tab-box-item " src="http://127.0.0.1:8081/images/iphone/    ${data[key+"2"]}.png" alt="">
-                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/     ${data[key+"3"]}.png" alt="">
-                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/     ${data[key+"4"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"2"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"3"]}.png" alt="">
+                    <img class="tab-box-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"4"]}.png" alt="">
                     </div>
                     <div class="tab-menu">
                     <img class="tab-menu-item" src="http://127.0.0.1:8081/images/iphone/${data[key+"1"]}.png" alt="">
