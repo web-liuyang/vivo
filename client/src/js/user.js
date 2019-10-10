@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 let $data = sessionStorage.getItem("user");
 let data = JSON.parse($data);
-console.log(data)
+
 
 function userData(data) {
     let htmlStr = "";
@@ -32,26 +32,26 @@ function userData(data) {
     <p>安全设置</p>
     <ul>
         <li><img src="http://127.0.0.1:8081/images/liuyang/user.png" alt=""></li>
-        <li>帐号密码&nbsp;&nbsp;&nbsp;&nbsp;<input class="psd-btn" type="password" value=${data.password}>
+        <li>帐号密码&nbsp;&nbsp;&nbsp;&nbsp;<input  class="psd-btn  shuju_1" type="password" value=${data.password}>
         <p>用于保护帐号信息和登录安全</p>
         </li>
-        <li><span>修改</span></li>
+        <li><span class="modify">修改</span></li>
       
     </ul>
     <ul>
         <li><img src="http://127.0.0.1:8081/images/liuyang/iphone.png" alt=""></li>
-        <li>安全手机<span contenteditable="true">${data.tel}</span>
+        <li>安全手机<span class="shuju_2" contenteditable="true">${data.tel}</span>
             <p>安全手机可用于登录vivo帐号，找回密码或其它安全验证</p>
         </li>
-        <li><span>修改</span></li>
+        <li><span class="modify">修改</span></li>
        
     </ul>
     <ul>
         <li><img src="http://127.0.0.1:8081/images/liuyang/e-mail.png" alt=""></li>
-        <li>安全邮箱<span contenteditable="true">${data.email}</span>
+        <li>安全邮箱<span class="shuju_3" contenteditable="true">${data.email}</span>
             <p>安全邮箱可用于登录vivo帐号，找回密码或其他安全验证。建议立即绑定</p>
         </li>
-        <li><span>修改</span></li>
+        <li><span class="modify">修改</span></li>
    
     </ul> 
     </div>`;
@@ -61,10 +61,55 @@ function userData(data) {
 
 }
 userData(data);
+// 账号中心注销
 
 $(".zxzh").click(function() {
-    console.log($(".zxzh"))
+
     sessionStorage.removeItem("user");
     confirm("您确定退出登录吗？")
     location.href = "login.html";
 })
+
+// 修改账号信息
+function modify(data) {
+    $(".modify").click(function() {
+        let sj_1 = $(".shuju_1").val();
+        let sj_2 = $(".shuju_2").text();
+        let sj_3 = $(".shuju_3").text();
+        data.email = sj_3;
+        data.tel = sj_2;
+        data.password = sj_1;
+
+        fetch('http://127.0.0.1:8081/login', {
+                body: JSON.stringify({
+                    username: data.username,
+                    nikename: data.nikename,
+                    password: data.password,
+                    tel: data.tel,
+                    email: data.email
+                }), // must match 'Content-Type' header
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, same-origin, *omit
+                headers: {
+                    'user-agent': 'Mozilla/4.0 MDN Example',
+                    'content-type': 'application/json'
+                },
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, cors, *same-origin
+                redirect: 'follow', // manual, *follow, error
+                referrer: 'no-referrer', // *client, no-referrer
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+
+
+
+
+    })
+
+
+
+}
+modify(data);
