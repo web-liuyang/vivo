@@ -34,7 +34,7 @@ function loaddingProduct(data) {
             <div class="info">
                 <p class="title">${obj.title}+ ${obj.vsn_1}&nbsp;${obj.color_2_name}</p>
                 <p class="dec">${obj.describe}</p>
-                <p class="price">${obj.price}</p>
+                <p class="price">￥${obj.price}</p>
             </div>
         </li>`
     })
@@ -75,6 +75,7 @@ fetch("http://127.0.0.1:8081/parts?classname_1=parts")
 // 1. 获取元素
 var menu_items = Array.from(document.querySelectorAll(".mtli"));
 var ct_items = Array.from(document.querySelectorAll(".product .goods"));
+var nav_items = Array.from(document.querySelectorAll(".mconts"));
 // 2. 监听点击菜单项
 var last_sel_index = 0; // 记录选中下标
 menu_items.forEach(function(menu_item, index) {
@@ -84,9 +85,11 @@ menu_items.forEach(function(menu_item, index) {
         // 移除效果
         menu_items[last_sel_index].classList.remove("active");
         ct_items[last_sel_index].classList.remove("hide");
+        nav_items[last_sel_index].classList.remove("hide");
         // 添加效果
         this.classList.add("active");
         ct_items[index].classList.add("hide");
+        nav_items[index].classList.add("hide");
         // 更新下标
         console.log(index);
         last_sel_index = index;

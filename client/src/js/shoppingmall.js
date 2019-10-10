@@ -17,7 +17,7 @@ function loaddingpanic(data) {
     let parent = $(".panic .panicgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="item">
+        <li class="cargo">
         <img src="http://127.0.0.1:8081/images/fengll/${obj.img}">
         <p>${obj.sellpoint}</p>
         <h3>${obj.name}</h3>
@@ -32,6 +32,11 @@ fetch("http://127.0.0.1:8081/panic")
     .then(response => response.json())
     .then(res => {
         loaddingpanic(res);
+        $(".cargo").click(function() {
+            let id = this.id;
+            location.href = `detail.html?id=${id}`
+        })
+
     })
 
 //热卖专区
@@ -40,7 +45,7 @@ function loaddingHotpart(data) {
     let parent = $(".hotpart .hotgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="box item" id="${obj.id}"  value="${obj.classname_1}">
+        <li class="box cargo" id="${obj.id}"  value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span><span>${obj.vsn_1}</span></p>
         <p class="dec">${obj.describe}</p>
@@ -54,6 +59,10 @@ fetch("http://127.0.0.1:8081/Hotpart?classname_3=hot")
     .then(response => response.json())
     .then(res => {
         loaddingHotpart(res);
+        $(".cargo").click(function() {
+            let id = this.id;
+            location.href = `detail.html?id=${id}`
+        })
     })
 
 //精品手机
@@ -62,7 +71,7 @@ function loaddingBoutique(data) {
     let parent = $(".boutique .btqgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="boxs item" id="${obj.id} "value="${obj.classname_1}">
+        <li class="boxs cargo" id="${obj.id} "value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span><span>${obj.vsn_1}</span></p>
         <p class="dec">${obj.describe}</p>
@@ -76,6 +85,10 @@ fetch("http://127.0.0.1:8081/boutique?classname_3=jingpiniphone")
     .then(response => response.json())
     .then(res => {
         loaddingBoutique(res);
+        $(".cargo").click(function() {
+            let id = this.id;
+            location.href = `detail.html?id=${id}`
+        })
     })
 
 //精品配件
@@ -84,7 +97,7 @@ function loaddingMountings(data) {
     let parent = $(".mountings .mtgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="boxs item"  id="${obj.id}" value="${obj.classname_1}">
+        <li class="boxs cargo"  id="${obj.id}" value="${obj.classname_1}">
         <img src="http://127.0.0.1:8081/images/parts/${obj.color_1_url_1}.png">
         <p class="name"><span>${obj.title}</span></p>
         <p class="dec">${obj.describe}</p>
@@ -98,6 +111,10 @@ fetch("http://127.0.0.1:8081/mountings?classname_3=jingpinparts")
     .then(response => response.json())
     .then(res => {
         loaddingMountings(res);
+        $(".cargo").click(function() {
+            let id = this.id;
+            location.href = `detail.html?id=${id}`
+        })
     })
 
 //菜单
@@ -164,6 +181,7 @@ $(function() {
 $(function() {
     $(".cgli").click(function() {
         let val = $(this).attr("value");
+        console.log(val);
     })
 
 });
