@@ -164,9 +164,9 @@ router.get("/parts", (req, res) => {
 //购物车
 router.post("/addshopcart", (req, res) => {
     // 参数结构
-    let {username,url,title,number,price } = req.body;
-    let mysqlyuju = "INSERT INTO `order` ( `username`,`url`,`title`,`number`,`price` )VALUES( ?,?,?,?,? )";
-    let jiegou = [username,url,title,number,price];
+    let {username,url,title,number,price,classname_1 } = req.body;
+    let mysqlyuju = "INSERT INTO `order` ( `username`,`url`,`title`,`number`,`price`,`classname_1` )VALUES( ?,?,?,?,?,? )";
+    let jiegou = [username,url,title,number,price,classname_1];
     // 获取数据库
     const db = getMysql();
     // 连接数据库
@@ -179,5 +179,21 @@ router.post("/addshopcart", (req, res) => {
         // 断开数据库连接
     db.end();
 })
-
+router.post("/chaxunshopcart", (req, res) => {
+    // 参数结构
+    let {username,url,title,number,price } = req.body;
+    let mysqlyuju = "SELECT * FROM `order` WHERE username=?";
+    let jiegou = [username];
+    // 获取数据库
+    const db = getMysql();
+    // 连接数据库
+    db.connect();
+    // 数据库指令，结构的参数，函数输出结果
+    db.query(mysqlyuju, jiegou, (err, sqlRes) => {
+            // 把结果返回前端
+            res.send(sqlRes);
+        })
+        // 断开数据库连接
+    db.end();
+})
 module.exports = router;
