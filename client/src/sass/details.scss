@@ -25,7 +25,7 @@
     }
     
     .show {
-        display: block;
+        display: block !important;
     }
     
     body {
@@ -67,10 +67,8 @@
                 width: 460px;
                 .tab-box-item {
                     text-align: center;
-                    width: 80%;
-                    &:not(:first-child) {
-                        display: none;
-                    }
+                    width: 100%;
+                    display: none;
                 }
             }
             .tab-menu {
