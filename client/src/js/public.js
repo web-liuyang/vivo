@@ -1,30 +1,23 @@
 import {
     Z_BLOCK
 } from "zlib";
-
+import {
+    loaddingerji
+} from '../js/fn.js';
 //公共
 $(function () {
 
     // 折叠栏
     //二级菜单
-    let $sections = $(".nav-item.box-item>section")
-    $.ajax({
-        type: "GET",  //默认get
-        url: "http://127.0.0.1:8081/shop",  //默认当前页
-        data: "data",  //格式{key:value}
-        dataType: "json",
-        beforeSend: function () {}, //请求发送前回调,常用验证
-        success: function (response) {  //请求成功回调
-            
-        },
-        error: function (e) {  //请求超时回调
-            if(e.statusText == "timeout"){
-                alert("请求超时");
-            }
-        },
-        complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
-    });
-    
+    loaddingerji('IQOO', 0)
+    loaddingerji('NEX', 1)
+    loaddingerji('X', 2)
+    loaddingerji('S', 3)
+    loaddingerji('Z', 4)
+    loaddingerji('Y', 5)
+    loaddingerji('U', 6)
+    loaddingerji('music', 7,'parts')
+
     // 导航栏折叠后的折叠按钮
     $(".unfold-btn").click(function () {
         $("header").toggleClass("none");
