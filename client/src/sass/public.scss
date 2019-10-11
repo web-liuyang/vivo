@@ -159,7 +159,7 @@ $font: 12px;
                 justify-content: space-around;
                 align-items: center;
                 height: 60px;
-                position: relative;
+                // position: relative;
                 li {
                     width: calc(100% / 11);
                     line-height: 60px;
@@ -173,20 +173,21 @@ $font: 12px;
                         height: 100%;
                         top: 0;
                         left: 0;
-                        text-align: left;
+                        text-align: center;
                         span{
                             display: inline-block;
-                            width: 10%;
+                            width: 60px;
                             height: 100%;
                             text-align: center;
                         }
                         input{
                             position: relative;
-                            width: 80%;
-                            height: 100%;
+                            width: 40%;
+                            height: 50px;
                             top:-1px;
                             text-indent: 1rem;
                             border: none;
+                            border-bottom: 1px #8a8787 solid;
                             &:focus{
                                 outline: none;
                             }
@@ -222,7 +223,7 @@ $font: 12px;
                         padding-top: 50px;
                         top: 0;
                         left: 0;
-                        background-color: white;
+                        background-color: rgba(255, 255, 255,0.95);
                         z-index: -1 !important;
                         display: none;
                         text-align: center;
