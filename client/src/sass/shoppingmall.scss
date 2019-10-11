@@ -182,54 +182,54 @@
              .next {
                  right: -50px;
              }
-             .panicgoods {
-                 padding-top: 10px;
-                 height: 380px;
+             .flash {
+                 padding-top: 20px;
                  white-space: nowrap;
                  overflow: hidden;
-                 display: grid;
-                 grid-template-columns: repeat(9, 25%);
-                 justify-content: space-between;
-                 li {
-                     display: inline-block;
-                     width: 293px;
+                 .panicgoods {
                      height: 380px;
-                     margin-bottom: 10px;
                      font-size: 0;
-                     text-align: center;
-                     background-color: #fff;
-                     transition: all .2s linear;
-                     img {
-                         width: 172px;
-                         height: 172px;
-                         margin-top: 41px;
-                     }
-                     h3 {
-                         font-size: 16px;
-                         white-space: nowrap;
-                         overflow: hidden;
-                         text-overflow: ellipsis
-                     }
-                     h4 {
-                         line-height: 17px;
-                         margin-top: 10px;
-                         font-size: 12px;
-                         color: #333;
-                         white-space: nowrap;
-                         overflow: hidden;
-                         text-overflow: ellipsis;
-                     }
-                     .price {
-                         font-size: 22px;
-                         color: #f51719;
-                         line-height: 1;
-                     }
-                     .oldprice {
-                         margin-left: 6px;
-                         text-decoration: line-through;
-                         color: #aaa;
-                         font-size: 14px;
-                         line-height: 1;
+                     li {
+                         display: inline-block;
+                         border-right: 8px solid rgb(247, 247, 245);
+                         width: 300px;
+                         height: 380px;
+                         margin-bottom: 10px;
+                         text-align: center;
+                         background-color: #fff;
+                         transition: all .2s linear;
+                         img {
+                             width: 172px;
+                             height: 172px;
+                             margin-top: 41px;
+                         }
+                         h3 {
+                             font-size: 16px;
+                             white-space: nowrap;
+                             overflow: hidden;
+                             text-overflow: ellipsis
+                         }
+                         h4 {
+                             line-height: 17px;
+                             margin-top: 10px;
+                             font-size: 12px;
+                             color: #333;
+                             white-space: nowrap;
+                             overflow: hidden;
+                             text-overflow: ellipsis;
+                         }
+                         .price {
+                             font-size: 22px;
+                             color: #f51719;
+                             line-height: 1;
+                         }
+                         .oldprice {
+                             margin-left: 6px;
+                             text-decoration: line-through;
+                             color: #aaa;
+                             font-size: 14px;
+                             line-height: 1;
+                         }
                      }
                  }
              }
