@@ -135,10 +135,11 @@ $(".to-top").click(function() {
     }, 1000)
 });
 //搜索
-$("#search").click(function(){
+$("#search").click(function(e){
     $(".search").addClass("block");
+    e.stopPropagation();
 })
-$(".off").click(function(){
-    console.log($(".search"))
+$(".off").click(function(e){
     $(".search").removeClass("block");
+    e.stopPropagation();
 })
