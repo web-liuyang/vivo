@@ -1,4 +1,209 @@
     // 详情页
+    .jiguangse {
+        background: rgb(85, 42, 164);
+    }
+    
+    .ciyoublack {
+        background: rgb(38, 38, 38);
+    }
+    
+    .xuanmured {
+        background: rgb(192, 0, 0);
+    }
+    
+    .jingsublack {
+        background: rgb(32, 37, 51);
+    }
+    
+    .lemangblue {
+        background: rgb(40, 61, 133);
+    }
+    
+    .huangyingbule {
+        background: rgb(20, 54, 125);
+    }
+    
+    .dianguangblue {
+        background: rgb(3, 26, 50);
+    }
+    
+    .rongyanorange {
+        background: rgb( 78, 37, 13);
+    }
+    
+    .wushiblack {
+        background: rgb(27, 28, 33);
+    }
+    
+    .qishiblack {
+        background: black;
+    }
+    
+    .yuguangwhite {
+        background: rgb(218, 224, 231);
+    }
+    
+    .tanxianblack {
+        background: black;
+    }
+    
+    .dianguangpurple {
+        background: rgb(60, 11, 122);
+    }
+    
+    .shenkongliuguang {
+        background: rgb(40, 49, 59);
+    }
+    
+    .yetaitianhe {
+        background: rgb(206, 232, 253);
+    }
+    
+    .bingyuanblue {
+        background: rgb(29, 118, 186);
+    }
+    
+    .xingyangpurple {
+        background: rgb(148, 10, 82);
+    }
+    
+    .queyublue {
+        background: rgb(34, 121, 178);
+    }
+    
+    .jade {
+        background: rgb(21, 106, 126);
+    }
+    
+    .huancaixiari {
+        background: rgb(197, 231, 253);
+    }
+    
+    .yinxiangxiari {
+        background: rgb(220, 233, 244);
+    }
+    
+    .blackzhenzhu {
+        background: rgb(9, 9, 9);
+    }
+    
+    .whitemubei {
+        background: rgb(232, 234, 233);
+    }
+    
+    .huanyeblue {
+        background: rgb(9, 21, 69);
+    }
+    
+    .binghublue {
+        background: rgb(30, 95, 121);
+    }
+    
+    .chongaipingk {
+        background: rgb(255, 203, 198);
+    }
+    
+    .bingyuanblack {
+        background: rgb(345, 58, 71);
+    }
+    
+    .zhongxiamenglihe {
+        background: rgb(234, 223, 233);
+    }
+    
+    .zhongxiameng {
+        background: rgb(234, 223, 233);
+    }
+    
+    .zhongqingblues {
+        background: rgb(4, 80, 142);
+    }
+    
+    .shanhured {
+        background: rgb(163, 33, 75);
+    }
+    
+    .jiguanghuanjing {
+        background: rgb(85, 6, 164);
+    }
+    
+    .quanxihuancai {
+        background: rgb(208, 220, 251);
+    }
+    
+    .zhulinhuanye {
+        background: rgb(4, 18, 15);
+    }
+    
+    .huancaipink {
+        background: rgb(247, 236, 233);
+    }
+    
+    .huanyingblack {
+        background: rgb(0, 0, 0);
+    }
+    
+    .jiyeblack {
+        background: rgb(0, 0, 0);
+    }
+    
+    .xingyeblack {
+        background: rgb(9, 12, 58);
+    }
+    
+    .menghuanpink {
+        background: rgb(235, 199, 231);
+    }
+    
+    .jiguangblue {
+        background: rgb(48, 30, 168);
+    }
+    
+    // dsfgfdgfghgfhgfxhgf
+    .boyangblue {
+        background: rgb(232, 225, 233);
+    }
+    
+    .haifengcyan {
+        background: rgb(212, 207, 251);
+    }
+    
+    .liuliblack {
+        background: rgb(23, 32, 48);
+    }
+    
+    .kongqueblue {
+        background: rgb(44, 67, 119);
+    }
+    
+    .chutaopink {
+        background: rgb(246, 205, 222);
+    }
+    
+    .dianyablack {
+        background: rgb(1, 45, 72);
+    }
+    
+    .zixiared {
+        background: rgb(226, 40, 94);
+    }
+    
+    .jiguangred {
+        background: rgb(167, 3, 54);
+    }
+    
+    .shenhublue {
+        background: rgb(53, 97, 152);
+    }
+    
+    .ziyeblack {
+        background: rgb(24, 24, 24);
+    }
+    
+    .chichared {
+        background: rgb(121, 44, 42);
+    }
+    
     .fl {
         float: left;
     }
@@ -61,7 +266,7 @@
         width: 70%;
         margin: 110px auto;
         .img {
-            width: 50%;
+            width: 45%;
             .tab-box {
                 margin: 0 auto;
                 width: 460px;
@@ -85,7 +290,7 @@
             }
         }
         .mesg {
-            width: 50%;
+            width: 45%;
             .des {
                 font-size: 12px;
             }
@@ -187,15 +392,14 @@
                 span {
                     display: inline-block;
                     line-height: 40px;
-                    width: 100px;
+                    width: 180px;
+                    color: white;
                     text-align: center;
                     border-radius: 30px;
                     margin-right: 50px;
                     background: red;
                     cursor: pointer;
                     &:first-child {
-                        border: 1px solid rgb(82, 80, 80);
-                        color: white;
                         background: rgb(82, 80, 80);
                     }
                 }

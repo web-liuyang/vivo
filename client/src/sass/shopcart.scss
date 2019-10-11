@@ -30,6 +30,7 @@ body {
 main {
     width: 60%;
     margin: 100px auto;
+    background-color: rgb(247, 247, 247) !important;
     .head-title {
         height: 50px;
         background: rgb(236, 233, 233);
@@ -62,7 +63,7 @@ main {
         width: 100%;
     }
     .shop-car thead tr td {
-        border: 1px solid grey;
+        border: 1px solid rgb(216, 213, 213);
         text-align: center;
         height: 30px;
         .qx {
@@ -74,10 +75,13 @@ main {
         }
     }
     .shop-car tbody tr td {
-        border: 1px solid grey;
+        border: 1px solid rgb(216, 213, 213);
         text-align: center;
         color: rgb(117, 115, 115);
-        height: 45px;
+        width: 100px;
+        img {
+            width: 70%;
+        }
     }
 }
 

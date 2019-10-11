@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-$(function () {
+$(function() {
 
 
     function loaddingDetails(data) {
@@ -69,16 +69,14 @@ $(function () {
                 <span class="reduce">-</span><span class="number">1</span><span class="plus">+</span>
             </div>
         </div>
-        <div class="total">
-            <p>￥${data.price}</p>
-        </div>
+     
         <div class="js">
             <span class="addshopcart">加入购物车</span>
             <span> 立即购买</span>
         </div>`;
         $mesg.html(htmlStr);
         // 商品数量加减
-        $(".reduce").click(function () {
+        $(".reduce").click(function() {
             var n = $(".number").text();
             var num = parseInt(n) - 1;
             if (num == 0) {
@@ -86,7 +84,7 @@ $(function () {
             }
             $(this).next().html(num);
         });
-        $(".plus").click(function () {
+        $(".plus").click(function() {
             let n = $(".number").text();
             let num = parseInt(n) + 1;
             if (num == 0) {
@@ -94,7 +92,7 @@ $(function () {
             }
             $(this).prev().html(num);
         })
-        $(".addshopcart").click(function () {
+        $(".addshopcart").click(function() {
             let $title = $(".title-iphone").children().text();
             let $price = $(".price").text().split("￥")[1];
             let $number = $(".number").text();
@@ -103,7 +101,7 @@ $(function () {
             fetch('http://127.0.0.1:8081/addshopcart', {
                 method: 'post',
                 body: JSON.stringify({
-                    classname_1:data.classname_1,
+                    classname_1: data.classname_1,
                     username: $username,
                     title: $title,
                     price: $price,
@@ -113,7 +111,7 @@ $(function () {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json()).then(function (data) {
+            }).then(res => res.json()).then(function(data) {
                 alert(data.tishi)
             });
             // console.log($url);
@@ -165,13 +163,13 @@ $(function () {
         $images.html(imgStr);
 
         //鼠标移入事件
-        $(".tab-menu-item").mouseenter(function () {
+        $(".tab-menu-item").mouseenter(function() {
             let $index = $(this).index();
             $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
         })
 
         // 改变版本框
-        $(".v-de").click(function () {
+        $(".v-de").click(function() {
             $(this).addClass("select").siblings().removeClass("select");
             let $vsn = $(".vsn");
             let $select = $(".v-des .select").html();
@@ -179,8 +177,8 @@ $(function () {
         })
 
         // 改变颜色框
-        $(".c-de").each(function (index, item) {
-            $(item).click(function () {
+        $(".c-de").each(function(index, item) {
+            $(item).click(function() {
                 //切换颜色
                 $(this).addClass("select").siblings().removeClass("select");
                 // let classname = this.children[0].className;
@@ -220,11 +218,11 @@ $(function () {
 
                 $images.html(imgStr);
                 //鼠标移入事件
-                $(".tab-menu-item").mouseenter(function () {
-                    let $index = $(this).index();
-                    $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
-                })
-                //拼接颜色到title
+                $(".tab-menu-item").mouseenter(function() {
+                        let $index = $(this).index();
+                        $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+                    })
+                    //拼接颜色到title
                 let $color = $(".color-s");
                 let $select_color = $(".c-des .select").html();
                 $color.html($select_color);
@@ -235,7 +233,7 @@ $(function () {
 
         // 清除版本为空
         let $vsn_null = $(".v-de");
-        $vsn_null.each(function (index, item) {
+        $vsn_null.each(function(index, item) {
             if (/null/.test(item.innerHTML)) {
                 $vsn_null[index].remove();
             }
@@ -243,7 +241,7 @@ $(function () {
 
         // 清除颜色为空
         let $color_null = $(".c-de");
-        $color_null.each(function (index, item) {
+        $color_null.each(function(index, item) {
             if (/null/.test(item.innerHTML)) {
                 $color_null[index].remove();
             }
