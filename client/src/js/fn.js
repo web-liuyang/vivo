@@ -1,5 +1,5 @@
 //函数封装
-function loaddingerji(claaname_2,index,classname_1='iphone',){
+function loaddingerji(claaname_2, index, classname_1 = 'iphone', ) {
     let $uls = $(".nav-item.box-item ul");
     $.ajax({
         type: "GET", //默认get
@@ -16,8 +16,8 @@ function loaddingerji(claaname_2,index,classname_1='iphone',){
                 </li>`
             })
             $uls[index].innerHTML = htmlStr;
-            $uls[index].childNodes.forEach(function(item,index){
-                item.onclick = function(){
+            $uls[index].childNodes.forEach(function (item, index) {
+                item.onclick = function () {
                     location.href = `http://127.0.0.1:8090/static/pages/details.html?id=${this.id}`
                 }
             })
@@ -30,9 +30,7 @@ function loaddingerji(claaname_2,index,classname_1='iphone',){
         complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
     });
 }
-function img(){
-    
-}
-module.exports ={
+
+module.exports = {
     loaddingerji
 }

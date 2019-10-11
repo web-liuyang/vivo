@@ -2,17 +2,15 @@
 import "../sass/public.scss";
 import "../sass/login.scss";
 //引用JS
-import "../js/fn.js";
+// import {loaddingerji} from "../js/fn.js";
 import "../js/loadding.js";
-import "../js/public.js";
+// import "../js/public.js";
 //引用bootstrap
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
     allResolved
 } from "q";
-
-
 
 $(".tologin").click(function() {
     if ($(".phonebox>input").val() == "" || $(".codebox>input").val() == "") {
@@ -36,7 +34,7 @@ $(".tologin").click(function() {
             })
             .then(response => response.json())
             .then(data => {
-                alert(data.tishi);
+
                 if (data.tishi == "登陆成功") {
                     sessionStorage.user = JSON.stringify({
                         username: data.data[0].username,
@@ -45,7 +43,8 @@ $(".tologin").click(function() {
                         email: data.data[0].email,
                         password: data.data[0].password,
                     });
-                    location.href = "http://127.0.0.1:8090";
+                    alert(data.tishi);
+                    location.href = "/index.html";
                 }
             })
     }

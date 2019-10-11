@@ -34,7 +34,7 @@ $(document).scroll(function() {
 
 
 
-
+/* 
 function loaddingIndex(data) {
     let htmlStr = "";
     let lis_box = $(".list-box ul");
@@ -55,4 +55,4 @@ fetch("http://127.0.0.1:8081/in?classname_2=IQOO", {
     .then(data => {
         console.log(data)
         loaddingIndex(data);
-    })
+    }) */
