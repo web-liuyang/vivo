@@ -17,11 +17,11 @@ function loaddingpanic(data) {
     let parent = $(".panic .panicgoods");
     data.forEach((obj, index) => {
         htmlStr += `
-        <li class="cargo">
-        <img src="http://127.0.0.1:8081/images/fengll/${obj.img}">
+        <li class="cargo" id="${obj.id}">
+        <img src="http://127.0.0.1:8081/images/iphone/${obj.color_1_url_1}.png">
         <p>${obj.sellpoint}</p>
-        <h3>${obj.name}</h3>
-        <h4>${obj.dec}></h4>
+        <h3>${obj.title}</h3>
+        <h4>${obj.describe}></h4>
         <p><span class="price">￥${obj.price}<span class="oldprice">￥${obj.oldprice}</p>
         </li>
     `
@@ -36,9 +36,7 @@ function loaddingpanic(data) {
         }
     }
     let smallImgs = [...document.querySelectorAll(".panicgoods .cargo")];
-    console.log(smallImgs);
     var panicgoods = document.querySelector('.panic .panicgoods');
-    console.log(panicgoods);
     let box = document.querySelector(".panicgoods .cargo");
     let width = parseFloat(getStyle(box, "width"));
     let index = 1; // 记录当前显示图片的下标
@@ -55,7 +53,6 @@ function loaddingpanic(data) {
                 panicgoods.style.transform = `translateX(${rl_offset}px)`;
                 cur_offset = rl_offset;
             };
-
         };
         leftBtn.onclick = function() {
             let rl_offset = cur_offset + width;
@@ -69,7 +66,7 @@ function loaddingpanic(data) {
         }
     })
 }
-fetch("http://127.0.0.1:8081/shop?classname_3=panic")
+fetch("http://127.0.0.1:8081/panic?classname_3=V")
     .then(response => response.json())
     .then(res => {
         loaddingpanic(res);
@@ -232,7 +229,7 @@ var minute = document.querySelector(".minute");
 var second = document.querySelector(".second");
 // 定时函数
 var daojishi = setInterval(function() {
-    var s1 = new Date("2019/12/1 00:00:00");
+    var s1 = new Date("2019/10/20 00:00:00");
     var s2 = new Date();
     var s3 = s1 - s2;
     if (s3 == 0) {

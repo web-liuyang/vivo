@@ -8,7 +8,7 @@ const defaultOptions = {
     // 数据库账号
     user: 'root',
     // 数据库密码
-    password: '33645858',
+    password: 'root',
     // 数据库名称
     database: 'b_c1egdchcwrsjob'
 }

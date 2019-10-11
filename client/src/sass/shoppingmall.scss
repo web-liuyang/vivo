@@ -204,12 +204,16 @@
                              margin-top: 41px;
                          }
                          h3 {
+                             width: 60%;
+                             margin: 0 auto;
                              font-size: 16px;
                              white-space: nowrap;
                              overflow: hidden;
                              text-overflow: ellipsis
                          }
                          h4 {
+                            width: 80%;
+                            margin: 0 auto;
                              line-height: 17px;
                              margin-top: 10px;
                              font-size: 12px;
@@ -217,8 +221,10 @@
                              white-space: nowrap;
                              overflow: hidden;
                              text-overflow: ellipsis;
+                             margin-bottom: 20px;
                          }
                          .price {
+                           
                              font-size: 22px;
                              color: #f51719;
                              line-height: 1;
