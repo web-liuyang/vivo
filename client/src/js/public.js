@@ -143,3 +143,7 @@ $(".off").click(function(e){
     $(".search").removeClass("block");
     e.stopPropagation();
 })
+$(".sousuo").click(function(e){
+    location.href = "http://127.0.0.1:8090/static/pages/product.html"
+    e.stopPropagation();
+})
