@@ -18,7 +18,7 @@ loaddingerji('U', 6)
 loaddingerji('music', 7, 'parts')
 
 // 导航栏折叠后的折叠按钮
-$(".unfold-btn").click(function () {
+$(".unfold-btn").click(function() {
     $("header").toggleClass("none");
     $("main").toggleClass("none");
     $("footer").toggleClass("none");
@@ -36,7 +36,7 @@ $(".unfold-btn").click(function () {
     }
 })
 
-$(".box-item").hover(function () {
+$(".box-item").hover(function() {
 
     $(".list-box").css({
         "display": "block"
@@ -51,7 +51,7 @@ $(".box-item").hover(function () {
         "color": "#000000"
     })
 
-}, function () {
+}, function() {
     $(".list-box").css({
         "display": "none"
     });
@@ -91,7 +91,7 @@ if (!sessionStorage.user) {
 
 
 // 注销登录
-$(".log-out").click(function () {
+$(".log-out").click(function() {
     let con = confirm("您确定退出登录吗？");
     if (con == true) {
         sessionStorage.removeItem("user");
@@ -101,11 +101,11 @@ $(".log-out").click(function () {
 
 //跳转购物车
 let $shopcart = $(".dropdown-item")[1];
-$($shopcart).click(function(){
-    if(!sessionStorage.user){
+$($shopcart).click(function() {
+    if (!sessionStorage.user) {
         alert("请登录后前往购物车");
         location.href = "http://127.0.0.1:8090/static/pages/login.html";
-    }else{
+    } else {
         location.href = "http://127.0.0.1:8090/static/pages/shopcart.html";
     }
 })
@@ -113,7 +113,7 @@ $($shopcart).click(function(){
 
 
 // 回到顶部
-$(document).scroll(function () {
+$(document).scroll(function() {
     let offset = $(document).scrollTop();
     if (offset > 600) {
         $(".to-top").css({
@@ -129,7 +129,7 @@ $(document).scroll(function () {
 })
 
 
-$(".to-top").click(function () {
+$(".to-top").click(function() {
     $("html,body").animate({
         scrollTop: 0
     }, 1000)
