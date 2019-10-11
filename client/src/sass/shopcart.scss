@@ -74,7 +74,10 @@ main {
             margin-right: 10px;
         }
     }
-    .shop-car tbody tr .delete {
+    .shop-car tbody tr .del {
+        cursor: pointer;
+    }
+    .shop-car tbody tr .js {
         cursor: pointer;
     }
     .shop-car tbody tr td {
@@ -84,6 +87,35 @@ main {
         width: 100px;
         img {
             width: 70%;
+        }
+    }
+    .total {
+        border: 1px solid rgb(216, 213, 213);
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .fir-sec {
+            margin-left: 70px;
+            p {
+                color: red;
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .sec-sec {
+            margin-right: 70px;
+            display: flex;
+            align-items: center;
+            p {
+                width: 100px;
+                line-height: 40px;
+                border: 1px solid red;
+                border-radius: 20px;
+                text-align: center;
+                background: red;
+                cursor: pointer;
+            }
         }
     }
 }

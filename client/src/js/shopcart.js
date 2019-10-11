@@ -19,7 +19,10 @@ $.ajax({
     beforeSend: function() {}, //请求发送前回调,常用验证
     success: function(response) { //请求成功回调
         let $tbody = $(".shop-car>tbody");
+        let $total = $(".total");
         let htmlStr = "";
+        let totalStr = "";
+
         response.forEach(item => {
             htmlStr += `                <tr>
             <td><img src="http://127.0.0.1:8081/images/${(function(){
@@ -32,13 +35,27 @@ $.ajax({
             <td class="title">${item.title}</td>
             <td>${item.price}</td>
             <td>${item.number}</td>
-           
             <td>${item.price}</td>
-            <td>${item.price * item.number}</td>
+            <td class="xj">${item.price * item.number}</td>
             <td class="del">删除</td>
+            <td class="js">结算</td>
         </tr>`
         })
         $tbody.html(htmlStr);
+        let jiage = 0;
+        $(".xj").each((index, item) => {
+            let $jg = parseInt($(".xj")[index].innerHTML);
+            console.log(typeof($jg))
+            jiage += $jg;
+        })
+        totalStr += `
+        <section class="fir-sec">
+        <p>商品总价</p> 
+        <p>￥${jiage}</p>
+        </section>
+        <section  class="sec-sec"><p>去结算</p></section>
+        `
+        $total.html(totalStr);
         //删除
         $(".del").each((index, item) => {
             $(item).click(function() {
