@@ -196,4 +196,23 @@ router.post("/chaxunshopcart", (req, res) => {
         // 断开数据库连接
     db.end();
 })
+//删除
+
+router.post("/delshopcart", (req, res) => {
+    // 参数结构
+    let {username,title } = req.body;
+    let mysqlyuju = "DELETE FROM `order` WHERE username=? AND title=?";
+    let jiegou = [username,title];
+    // 获取数据库
+    const db = getMysql();
+    // 连接数据库
+    db.connect();
+    // 数据库指令，结构的参数，函数输出结果
+    db.query(mysqlyuju, jiegou, (err, sqlRes) => {
+            // 把结果返回前端
+            res.send({tishi:"删除成功"});
+        })
+        // 断开数据库连接
+    db.end();
+})
 module.exports = router;
