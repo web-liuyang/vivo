@@ -61,13 +61,13 @@
         width: 70%;
         margin: 110px auto;
         .img {
-            width: 35%;
+            width: 50%;
             .tab-box {
                 margin: 0 auto;
                 width: 460px;
                 .tab-box-item {
                     text-align: center;
-                    width: 100%;
+                    width: 90%;
                     display: none;
                 }
             }
@@ -77,8 +77,8 @@
                 display: flex;
                 justify-content: center;
                 .tab-menu-item {
-                    width: 100px;
-                    height: 100px;
+                    width: 90px;
+                    height: 90px;
                     padding: 0;
                     margin: 0;
                 }
