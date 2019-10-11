@@ -11,11 +11,23 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {
     allResolved
 } from "q";
+$('[type=checkbox]').prop('checked',false);
+    $('[type=checkbox]').click(function () {
+        if($('[type=checkbox]').prop('checked') == true){
+            $(".codebox>input").attr("type", "text");
+            $('[type=checkbox]').prop('checked', true);
+        }else{
+            $(".codebox>input").attr("type", "password");
+            $('[type=checkbox]').prop('checked', false);
+        }
+    })
 
-$(".tologin").click(function() {
+
+$(".tologin").click(function () {
     if ($(".phonebox>input").val() == "" || $(".codebox>input").val() == "") {
         alert("请输入账号或密码")
     } else {
+        console.log($(".codebox>input").val());
         fetch('http://127.0.0.1:8081/login', {
                 body: JSON.stringify({
                     username: $(".phonebox>input").val(),
@@ -34,7 +46,6 @@ $(".tologin").click(function() {
             })
             .then(response => response.json())
             .then(data => {
-
                 if (data.tishi == "登陆成功") {
                     sessionStorage.user = JSON.stringify({
                         username: data.data[0].username,
@@ -44,7 +55,9 @@ $(".tologin").click(function() {
                         password: data.data[0].password,
                     });
                     alert(data.tishi);
-                    location.href = "/index.html";
+                    location.href = "http://127.0.0.1:8090";
+                }else{
+                    alert(data.tishi);
                 }
             })
     }

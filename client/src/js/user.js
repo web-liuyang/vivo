@@ -24,7 +24,7 @@ function userData(data) {
     <img src="http://127.0.0.1:8081/images/liuyang/logo.png">
     <h4>账号中心</h4>
     <p class="goback"><a href="javascript:history.go(-1)">返回上一页面</a></p>
-    <p class="zxzh"><span>${data.nikename},</span>&nbsp;&nbsp退出账号</p>
+    <p class="log-out zxzh"><span>${data.nikename},</span>&nbsp;&nbsp退出账号</p>
 </div>
 
 
@@ -63,11 +63,13 @@ function userData(data) {
 }
 userData(data);
 // 账号中心注销
-
-$(".zxzh").click(function() {
-    sessionStorage.removeItem("user");
-    confirm("您确定退出登录吗？")
-    location.href = "login.html";
+// 注销登录
+$(".log-out").click(function () {
+    let con = confirm("您确定退出登录吗？");
+    if (con == true) {
+        sessionStorage.removeItem("user");
+        location.href = "http://127.0.0.1:8090/static/pages/login.html";
+    }
 })
 
 // 修改账号信息
