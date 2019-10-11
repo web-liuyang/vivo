@@ -53,6 +53,7 @@
             overflow: hidden;
             text-align: center;
             position: relative;
+            transition: all .5s linear;
             .desc {
                 position: absolute;
                 top: 3%;
@@ -160,7 +161,7 @@
                 height: 100%;
                 width: 25%;
                 overflow: hidden;
-                transition: all .25s linear;
+                transition: all .5s linear;
                 position: relative;
                 img {
                     width: 100%;

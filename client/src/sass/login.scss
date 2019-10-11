@@ -124,6 +124,10 @@ main {
                     margin-top: 20px;
                     cursor: pointer;
                     background-color: #456fff;
+                    transition: all .25s linear;
+                    &:hover {
+                        background-color: #0a3ee9;
+                    }
                 }
                 .register {
                     width: 360px;
@@ -134,7 +138,10 @@ main {
                     font-size: 17px;
                     text-align: center;
                     margin-top: 15px;
-                    cursor: pointer;
+                    transition: all .25s linear;
+                    a {
+                        text-decoration: none;
+                    }
                     &:hover {
                         background-color: #d4dffa;
                     }
