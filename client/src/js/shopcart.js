@@ -14,9 +14,14 @@ $.ajax({
     url: "http://127.0.0.1:8081/chaxunshopcart", //默认当前页
     data: { username: JSON.parse(sessionStorage.user).username }, //格式{key:value}
     dataType: "json",
+<<<<<<< HEAD
     beforeSend: function() {}, //请求发送前回调,常用验证
     success: function(response) { //请求成功回调
         console.log(response)
+=======
+    beforeSend: function () {}, //请求发送前回调,常用验证
+    success: function (response) {  //请求成功回调
+>>>>>>> da0a12dbbf3cde1a18b2fd17050694556f51e29b
         let $tbody = $(".shop-car>tbody");
         let htmlStr = "";
         response.forEach(item => {

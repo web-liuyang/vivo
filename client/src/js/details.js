@@ -93,6 +93,10 @@ $(function() {
             $(this).prev().html(num);
         })
         $(".addshopcart").click(function() {
+            if (!sessionStorage.user) {
+                alert("请登录后加入购物车");
+                location.href = "http://127.0.0.1:8090/static/pages/login.html";
+            }
             let $title = $(".title-iphone").children().text();
             let $price = $(".price").text().split("￥")[1];
             let $number = $(".number").text();
