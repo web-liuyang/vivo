@@ -16,7 +16,6 @@ $.ajax({
     dataType: "json",
     beforeSend: function () {}, //请求发送前回调,常用验证
     success: function (response) {  //请求成功回调
-        console.log(response)
         let $tbody = $(".shop-car>tbody");
         let htmlStr = "";
         response.forEach(item=>{

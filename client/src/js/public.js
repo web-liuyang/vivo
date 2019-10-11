@@ -134,3 +134,11 @@ $(".to-top").click(function() {
         scrollTop: 0
     }, 1000)
 });
+//搜索
+$("#search").click(function(){
+    $(".search").addClass("block");
+})
+$(".off").click(function(){
+    console.log($(".search"))
+    $(".search").removeClass("block");
+})

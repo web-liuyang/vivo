@@ -47,7 +47,7 @@ $(".tologin").click(function () {
             .then(response => response.json())
             .then(data => {
                 if (data.tishi == "登陆成功") {
-                    sessionStorage.user = JSON.stringify({
+                    sessionStorage['user'] = JSON.stringify({
                         username: data.data[0].username,
                         nikename: data.data[0].nikename,
                         tel: data.data[0].tel,
@@ -55,7 +55,9 @@ $(".tologin").click(function () {
                         password: data.data[0].password,
                     });
                     alert(data.tishi);
-                    location.href = "http://127.0.0.1:8090";
+                    location.href = "../../index.html";
+
+
                 }else{
                     alert(data.tishi);
                 }
