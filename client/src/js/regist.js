@@ -25,7 +25,7 @@ $(".btn").click(function() {
     for (let i = 0, len = $login.length; i < len; i++) {
         if ($login[i].value == "") {
             alert("请完善信息")
-            break;
+            return;
         }
     }
     if ($("section").hasClass("error")) {
@@ -52,8 +52,8 @@ $(".btn").click(function() {
             }).then(request => request.json())
             .then(data => {
                 alert(data.tishi)
+                location.href= 'javascript:history.go(-1)';
             })
-
     }
 
 

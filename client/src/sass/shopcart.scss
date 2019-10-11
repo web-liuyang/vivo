@@ -92,24 +92,29 @@ main {
     .total {
         border: 1px solid rgb(216, 213, 213);
         margin-top: 60px;
+        height:90px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .fir-sec {
             margin-left: 70px;
+            line-height:50px;
             p {
-                color: red;
+                line-height: 90px;
+                margin:0px;
+                color: rgb(117, 115, 115);
                 font-size: 22px;
                 text-align: center;
             }
         }
         .sec-sec {
             margin-right: 70px;
-            display: flex;
-            align-items: center;
+          
+            line-height:50px;
             p {
+                margin:0px;
                 width: 100px;
-                line-height: 40px;
+                line-height: 50px;
                 border: 1px solid red;
                 border-radius: 20px;
                 text-align: center;

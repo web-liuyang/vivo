@@ -28,7 +28,11 @@ $(document).scroll(function() {
 
 })
 
-
+$(".box-item").hover(function(){
+    $("#search>section>span").css({'color':'black'})
+},function(){
+    $("#search>section>span").css({'color':'white'})
+});
 
 
 

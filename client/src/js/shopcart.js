@@ -50,8 +50,8 @@ $.ajax({
         })
         totalStr += `
         <section class="fir-sec">
-        <p>商品总价</p> 
-        <p>￥${jiage}</p>
+       
+        <p>商品总价:￥${jiage}</p>
         </section>
         <section  class="sec-sec"><p>去结算</p></section>
         `

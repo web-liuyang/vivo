@@ -178,9 +178,11 @@
              }
              .prev {
                  left: -50px;
+                 cursor: pointer;
              }
              .next {
                  right: -50px;
+                 cursor: pointer;
              }
              .flash {
                  padding-top: 20px;
@@ -413,4 +415,11 @@
  
  .navbar-brand {
      color: black !important;
+ }
+ #search>span{
+     display: inline-block;
+     font-size: 26px;
+    &:hover{
+        color: blue;
+    }
  }

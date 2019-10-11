@@ -205,11 +205,11 @@ $font: 12px;
                             color: black !important;
                         }
                     }
-                    &:hover>section span {
-                        color: black !important;
-                    }
+
+
                     a {
                         color: #fff;
+                        transition: 0ms;
                         &:hover {
                             color: rgb(86, 113, 254) !important;
                             text-decoration: none;
@@ -249,7 +249,7 @@ $font: 12px;
                         // color: $themeColor;
                         color: #fff;
                         font-size: 18px;
-                        transition: all .5s linear;
+                        // transition: all .5s linear;
                         span {
                             cursor: pointer;
                             &:hover {
