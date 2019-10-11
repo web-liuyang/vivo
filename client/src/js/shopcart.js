@@ -16,8 +16,8 @@ $.ajax({
         username: JSON.parse(sessionStorage.user).username
     }, //格式{key:value}
     dataType: "json",
-    beforeSend: function () {}, //请求发送前回调,常用验证
-    success: function (response) { //请求成功回调
+    beforeSend: function() {}, //请求发送前回调,常用验证
+    success: function(response) { //请求成功回调
         let $tbody = $(".shop-car>tbody");
         let htmlStr = "";
         response.forEach(item => {
@@ -41,7 +41,7 @@ $.ajax({
         $tbody.html(htmlStr);
         //删除
         $(".del").each((index, item) => {
-            $(item).click(function () {
+            $(item).click(function() {
                 let username = JSON.parse(sessionStorage.user).username;
                 let title = $(".title")[index].textContent;
                 $.ajax({
@@ -52,26 +52,26 @@ $.ajax({
                         'username': username
                     }, //格式{key:value}
                     dataType: "json",
-                    beforeSend: function () {}, //请求发送前回调,常用验证
-                    success: function (response) { //请求成功回调
-                        
+                    beforeSend: function() {}, //请求发送前回调,常用验证
+                    success: function(response) { //请求成功回调
+
                     },
-                    error: function (e) { //请求超时回调
+                    error: function(e) { //请求超时回调
                         if (e.statusText == "timeout") {
                             alert("请求超时");
                         }
                     },
-                    complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
+                    complete: function() {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
                 });
                 $($(this).parents()[0]).remove();
             })
         })
 
     },
-    error: function (e) { //请求超时回调
+    error: function(e) { //请求超时回调
         if (e.statusText == "timeout") {
             alert("请求超时");
         }
     },
-    complete: function () {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
+    complete: function() {}, //无论请求是成功还是失败都会执行的回调，常用全局成员的释放，或者页面状态的重置
 });
