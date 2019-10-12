@@ -42,9 +42,9 @@ router.post("/login", (req, res) => {
 // 注册
 router.post("/regist", (req, res) => {
     // 参数结构
-    let { username, password, email, tel, nike } = req.body;
+    let { username, password, email, tel, nikename } = req.body;
     let mysqlyuju = "INSERT INTO user (`username`,`password`,`email`,`tel`,`nikename`) VALUES (?,?,?,?,?)";
-    let jiegou = [username, password, email, tel, nike]
+    let jiegou = [username, password, email, tel, nikename]
         // 获取数据库
     const db = getMysql();
     // 连接数据库

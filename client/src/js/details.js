@@ -166,10 +166,29 @@ $(function() {
         }
         $images.html(imgStr);
 
+        $(".tab-box-item.show").dblclick(function(){
+            $(this).attr("src");
+            // console.log($(this).attr("src"));
+            $(".zhezhao #img img").attr("src",$(this).attr("src"));
+            $(".zhezhao").addClass("block")
+        })
+        $(".zhezhao>p").click(function(){
+            $(".zhezhao").removeClass("block")
+        })
         //鼠标移入事件
         $(".tab-menu-item").mouseenter(function() {
             let $index = $(this).index();
             $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+
+            $(".tab-box-item.show").dblclick(function(){
+                $(this).attr("src");
+                // console.log($(this).attr("src"));
+                $(".zhezhao #img img").attr("src",$(this).attr("src"));
+                $(".zhezhao").addClass("block")
+            })
+            $(".zhezhao>p").click(function(){
+                $(".zhezhao").removeClass("block")
+            })
         })
 
         // 改变版本框
@@ -221,10 +240,28 @@ $(function() {
                 }
 
                 $images.html(imgStr);
+                $(".tab-box-item.show").dblclick(function(){
+                    $(this).attr("src");
+                    console.log($(this).attr("src"));
+                    $(".zhezhao #img img").attr("src",$(this).attr("src"));
+                    $(".zhezhao").addClass("block")
+                })
+                $(".zhezhao>p").click(function(){
+                    $(".zhezhao").removeClass("block")
+                })
                 //鼠标移入事件
                 $(".tab-menu-item").mouseenter(function() {
                         let $index = $(this).index();
                         $($(".tab-box-item")[$index]).addClass("show").siblings().removeClass("show");
+                        $(".tab-box-item.show").dblclick(function(){
+                            $(this).attr("src");
+                            console.log($(this).attr("src"));
+                            $(".zhezhao #img img").attr("src",$(this).attr("src"));
+                            $(".zhezhao").addClass("block")
+                        })
+                        $(".zhezhao>p").click(function(){
+                            $(".zhezhao").removeClass("block")
+                        })
                     })
                     //拼接颜色到title
                 let $color = $(".color-s");
@@ -264,3 +301,4 @@ $(function() {
 
 
 })
+
